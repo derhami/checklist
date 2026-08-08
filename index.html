@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>چک‌لیست طراحی UX | مرجع استانداردهای رابط و تجربه کاربر</title>
+    
+    <!-- Meta Descriptions & SEO -->
+    <meta name="description" content="مرجع جامع و تخصصی چک‌لیست‌های طراحی UI/UX، دسترسی‌پذیری WCAG، فرم‌ها، کامپوننت‌ها و جریان‌های کاربر به زبان فارسی. ارزیابی زنده و ذخیره پیشرفت." />
+    <meta name="keywords" content="چک لیست طراحی, UX checklist, طراحی UI, تجربه کاربری, دسترسی پذیری, WCAG, فیگما, فرم ها, دیزاین سیستم" />
+    <meta name="author" content="مرجع تخصصی چک‌لیست‌های UX" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0c0a09" />
+    <link rel="canonical" href="https://checklist.nounproject.ir/" />
+
+    <!-- Icons & Manifest -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://checklist.nounproject.ir/" />
+    <meta property="og:title" content="چک‌لیست طراحی UX | مرجع استانداردهای رابط و تجربه کاربر" />
+    <meta property="og:description" content="مجموعه کامل بیش از ۶۹ چک‌لیست کاربردی برای طراحان محصول، مدیران محصول و برنامه‌نویسان با قابلیت بررسی زنده." />
+    <meta property="og:image" content="/favicon.svg" />
+    <meta property="og:locale" content="fa_IR" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="چک‌لیست طراحی UX | مرجع استانداردهای رابط و تجربه کاربر" />
+    <meta name="twitter:description" content="مجموعه کامل بیش از ۶۹ چک‌لیست کاربردی برای طراحان محصول." />
+    <meta name="twitter:image" content="/favicon.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "چک‌لیست طراحی UX",
+      "alternateName": "Design UX Checklist Persian Reference",
+      "url": "https://checklist.nounproject.ir/",
+      "description": "مرجع جامع چک‌لیست‌های تخصصی UI/UX و طراحی محصول به زبان فارسی",
+      "inLanguage": "fa"
+    }
+    </script>
+
+    <!-- Initial Theme & GitHub Pages URL Restore Script -->
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('theme_mode');
+          var isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.style.colorScheme = 'dark';
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.style.colorScheme = 'light';
+          }
+        } catch (e) {}
+
+        // Single Page Apps for GitHub Pages
+        (function(l) {
+          if (l.search[1] === '/' ) {
+            var decoded = l.search.slice(1).split('&').map(function(s) { 
+              return s.replace(/~and~/g, '&')
+            }).join('?');
+            window.history.replaceState(null, null,
+                l.pathname.slice(0, -1) + decoded + l.hash
+            );
+          }
+        }(window.location));
+      })();
+    </script>
+  </head>
+  <body class="bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100 font-['Vazirmatn',sans-serif] antialiased min-h-screen selection:bg-amber-500 selection:text-stone-950">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

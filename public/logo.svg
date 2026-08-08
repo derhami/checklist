@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Outer open circle -->
+  <path d="M 380,215 A 150,150 0 1,1 315,115" fill="none" stroke="currentColor" stroke-width="36" stroke-linecap="round"/>
+  <!-- Inner checkmark -->
+  <path d="M 180,250 L 245,315 L 390,170" fill="none" stroke="currentColor" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

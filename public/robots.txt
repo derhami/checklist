@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://checklist.nounproject.ir/sitemap.xml
