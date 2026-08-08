@@ -1,0 +1,29 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: saturday
+      time: "09:00"
+      timezone: "Asia/Tehran"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+    groups:
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+      vite:
+        patterns:
+          - "vite"
+          - "@vitejs/*"
+          - "@tailwindcss/*"
+          - "tailwindcss"
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
