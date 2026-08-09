@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
   Search,
@@ -51,12 +51,12 @@ export const Header: React.FC<HeaderProps> = ({
           <Link
             to="/"
             className="flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 rounded-xl shrink-0"
-            title="چک‌لیست طراحی UX - صفحه اصلی"
+            title="Ú†Ú©â€ŒÙ„ÛŒØ³Øª Ø·Ø±Ø§Ø­ÛŒ UX - ØµÙØ­Ù‡ Ø§ØµÙ„ÛŒ"
           >
             {/* Crisp Clean Vector Logo without Background Box */}
             <svg
               viewBox="0 0 512 512"
-              className="w-8 h-8 sm:w-9 sm:h-9 text-stone-900 dark:text-stone-100 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors shrink-0"
+              className="w-8 h-8 sm:w-9 sm:h-9 text-stone-900 dark:text-stone-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors shrink-0"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
@@ -78,10 +78,10 @@ export const Header: React.FC<HeaderProps> = ({
             
             <div className="flex flex-col min-w-0">
               <span className="font-black text-stone-900 dark:text-stone-100 text-xs sm:text-base leading-tight tracking-tight whitespace-nowrap truncate">
-                چک‌لیست طراحی
+                Ú†Ú©â€ŒÙ„ÛŒØ³Øª Ø·Ø±Ø§Ø­ÛŒ
               </span>
               <span className="hidden sm:block text-[10px] text-stone-500 dark:text-stone-400 font-medium whitespace-nowrap truncate">
-                مرجع تخصصی طراحان وب و محصول
+                Ù…Ø±Ø¬Ø¹ ØªØ®ØµØµÛŒ Ø·Ø±Ø§Ø­Ø§Ù† ÙˆØ¨ Ùˆ Ù…Ø­ØµÙˆÙ„
               </span>
             </div>
           </Link>
@@ -91,9 +91,9 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               onClick={onOpenProjectModal}
               className="hidden lg:flex items-center gap-1.5 px-2.5 py-1 rounded-xl text-xs font-semibold bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 transition-colors max-w-[140px] truncate"
-              title="مدیریت و تغییر پروژه فعال"
+              title="Ù…Ø¯ÛŒØ±ÛŒØª Ùˆ ØªØºÛŒÛŒØ± Ù¾Ø±ÙˆÚ˜Ù‡ ÙØ¹Ø§Ù„"
             >
-              <FolderKanban className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+              <FolderKanban className="w-3.5 h-3.5 text-brand-500 shrink-0" />
               <span className="truncate">{activeProjectName}</span>
             </button>
           )}
@@ -104,12 +104,12 @@ export const Header: React.FC<HeaderProps> = ({
               to="/dashboard"
               className={`px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap flex items-center gap-1.5 ${
                 isActive('/dashboard')
-                  ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold'
+                  ? 'bg-brand-500/10 text-brand-600 dark:text-brand-400 font-bold'
                   : 'text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100/60 dark:hover:bg-stone-900'
               }`}
             >
-              <LayoutDashboard className="w-3.5 h-3.5 text-amber-500" />
-              <span>داشبورد UX</span>
+              <LayoutDashboard className="w-3.5 h-3.5 text-brand-500" />
+              <span>Ø¯Ø§Ø´Ø¨ÙˆØ±Ø¯ UX</span>
             </Link>
             <Link
               to="/browse"
@@ -119,7 +119,7 @@ export const Header: React.FC<HeaderProps> = ({
                   : 'text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100/60 dark:hover:bg-stone-900'
               }`}
             >
-              کتابخانه چک‌لیست‌ها
+              Ú©ØªØ§Ø¨Ø®Ø§Ù†Ù‡ Ú†Ú©â€ŒÙ„ÛŒØ³Øªâ€ŒÙ‡Ø§
             </Link>
             <Link
               to="/guide"
@@ -129,7 +129,7 @@ export const Header: React.FC<HeaderProps> = ({
                   : 'text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100/60 dark:hover:bg-stone-900'
               }`}
             >
-              راهنمای اصول UX
+              Ø±Ø§Ù‡Ù†Ù…Ø§ÛŒ Ø§ØµÙˆÙ„ UX
             </Link>
             <Link
               to="/about"
@@ -139,7 +139,7 @@ export const Header: React.FC<HeaderProps> = ({
                   : 'text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100/60 dark:hover:bg-stone-900'
               }`}
             >
-              درباره مرجع
+              Ø¯Ø±Ø¨Ø§Ø±Ù‡ Ù…Ø±Ø¬Ø¹
             </Link>
           </nav>
         </div>
@@ -151,7 +151,7 @@ export const Header: React.FC<HeaderProps> = ({
             href="https://derhami.com"
             target="_blank"
             rel="noopener noreferrer"
-            title="وب‌سایت شخصی حمیدرضا درهمی - طراح محصول و توسعه‌دهنده"
+            title="ÙˆØ¨â€ŒØ³Ø§ÛŒØª Ø´Ø®ØµÛŒ Ø­Ù…ÛŒØ¯Ø±Ø¶Ø§ Ø¯Ø±Ù‡Ù…ÛŒ - Ø·Ø±Ø§Ø­ Ù…Ø­ØµÙˆÙ„ Ùˆ ØªÙˆØ³Ø¹Ù‡â€ŒØ¯Ù‡Ù†Ø¯Ù‡"
             className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-bold text-stone-700 dark:text-stone-200 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 transition-colors border border-stone-200/80 dark:border-stone-800 ml-1"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
@@ -162,12 +162,12 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={onOpenSearch}
             className="h-9 px-2 sm:px-3 flex items-center gap-1.5 text-xs font-medium text-stone-600 dark:text-stone-300 bg-stone-100 dark:bg-stone-900 hover:bg-stone-200 dark:hover:bg-stone-800 rounded-xl border border-stone-200/60 dark:border-stone-800 transition-colors shrink-0"
-            title="جستجوی سریع (Ctrl+K)"
+            title="Ø¬Ø³ØªØ¬ÙˆÛŒ Ø³Ø±ÛŒØ¹ (Ctrl+K)"
           >
             <Search className="w-4 h-4 text-stone-400 shrink-0" />
-            <span className="hidden sm:inline whitespace-nowrap">جستجو...</span>
+            <span className="hidden sm:inline whitespace-nowrap">Ø¬Ø³ØªØ¬Ùˆ...</span>
             <kbd className="hidden md:inline-block px-1.5 py-0.5 text-[10px] font-mono bg-stone-200/80 dark:bg-stone-800 text-stone-600 dark:text-stone-400 rounded-md mr-1">
-              ⌘K
+              âŒ˜K
             </kbd>
           </button>
 
@@ -175,12 +175,12 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={onOpenBookmarks}
             className="relative h-9 px-2 sm:px-3 flex items-center gap-1 text-xs font-medium text-stone-700 dark:text-stone-300 bg-stone-100 dark:bg-stone-900 hover:bg-stone-200 dark:hover:bg-stone-800 rounded-xl border border-stone-200/60 dark:border-stone-800 transition-colors shrink-0"
-            title="چک‌لیست‌های ذخیره‌شده (⌘B)"
+            title="Ú†Ú©â€ŒÙ„ÛŒØ³Øªâ€ŒÙ‡Ø§ÛŒ Ø°Ø®ÛŒØ±Ù‡â€ŒØ´Ø¯Ù‡ (âŒ˜B)"
           >
-            <Bookmark className={`w-4 h-4 ${bookmarksCount > 0 ? 'fill-amber-500 text-amber-500' : 'text-stone-400'}`} />
-            <span className="hidden sm:inline whitespace-nowrap">نشانک‌ها</span>
+            <Bookmark className={`w-4 h-4 ${bookmarksCount > 0 ? 'fill-brand-500 text-brand-500' : 'text-stone-400'}`} />
+            <span className="hidden sm:inline whitespace-nowrap">Ù†Ø´Ø§Ù†Ú©â€ŒÙ‡Ø§</span>
             {bookmarksCount > 0 && (
-              <span className="px-1.5 py-0.5 bg-amber-500 text-stone-950 font-bold text-[10px] rounded-full min-w-[18px] text-center shadow-sm">
+              <span className="px-1.5 py-0.5 bg-brand-500 text-stone-950 font-bold text-[10px] rounded-full min-w-[18px] text-center shadow-sm">
                 {toPersianDigits(bookmarksCount)}
               </span>
             )}
@@ -190,16 +190,16 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             onClick={onToggleDark}
             className="h-9 w-9 flex items-center justify-center text-stone-600 dark:text-stone-300 bg-stone-100 dark:bg-stone-900 hover:bg-stone-200 dark:hover:bg-stone-800 rounded-xl border border-stone-200/60 dark:border-stone-800 transition-colors shrink-0"
-            title={isDark ? 'تغییر به حالت روز' : 'تغییر به حالت شب'}
+            title={isDark ? 'ØªØºÛŒÛŒØ± Ø¨Ù‡ Ø­Ø§Ù„Øª Ø±ÙˆØ²' : 'ØªØºÛŒÛŒØ± Ø¨Ù‡ Ø­Ø§Ù„Øª Ø´Ø¨'}
           >
-            {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-stone-700 dark:text-stone-300" />}
+            {isDark ? <Sun className="w-4 h-4 text-brand-400" /> : <Moon className="w-4 h-4 text-stone-700 dark:text-stone-300" />}
           </button>
 
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden h-9 w-9 flex items-center justify-center text-stone-600 dark:text-stone-300 bg-stone-100 dark:bg-stone-900 hover:bg-stone-200 dark:hover:bg-stone-800 rounded-xl border border-stone-200/60 dark:border-stone-800 transition-colors shrink-0"
-            aria-label="منوی موبایل"
+            aria-label="Ù…Ù†ÙˆÛŒ Ù…ÙˆØ¨Ø§ÛŒÙ„"
           >
             {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </button>
@@ -215,14 +215,14 @@ export const Header: React.FC<HeaderProps> = ({
                 setMobileMenuOpen(false);
                 onOpenProjectModal();
               }}
-              className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800/60"
+              className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold bg-brand-50 dark:bg-brand-950/40 text-brand-800 dark:text-brand-300 border border-brand-200 dark:border-brand-800/60"
             >
               <div className="flex items-center gap-2">
-                <FolderKanban className="w-4 h-4 text-amber-600" />
-                <span>پروژه فعال:</span>
+                <FolderKanban className="w-4 h-4 text-brand-600" />
+                <span>Ù¾Ø±ÙˆÚ˜Ù‡ ÙØ¹Ø§Ù„:</span>
                 <span className="font-bold truncate max-w-[150px]">{activeProjectName}</span>
               </div>
-              <span className="text-[10px] underline">تغییر</span>
+              <span className="text-[10px] underline">ØªØºÛŒÛŒØ±</span>
             </button>
           )}
 
@@ -231,12 +231,12 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => setMobileMenuOpen(false)}
             className={`flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs font-semibold transition-colors ${
               isActive('/dashboard')
-                ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold'
+                ? 'bg-brand-500/10 text-brand-600 dark:text-brand-400 font-bold'
                 : 'text-stone-700 dark:text-stone-200 hover:bg-stone-200/60 dark:hover:bg-stone-800'
             }`}
           >
-            <LayoutDashboard className="w-4 h-4 text-amber-500" />
-            داشبورد سلامت UX
+            <LayoutDashboard className="w-4 h-4 text-brand-500" />
+            Ø¯Ø§Ø´Ø¨ÙˆØ±Ø¯ Ø³Ù„Ø§Ù…Øª UX
           </Link>
           <Link
             to="/browse"
@@ -248,7 +248,7 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             <Grid className="w-4 h-4 text-stone-500" />
-            کتابخانه همه چک‌لیست‌ها
+            Ú©ØªØ§Ø¨Ø®Ø§Ù†Ù‡ Ù‡Ù…Ù‡ Ú†Ú©â€ŒÙ„ÛŒØ³Øªâ€ŒÙ‡Ø§
           </Link>
           <Link
             to="/guide"
@@ -260,7 +260,7 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             <BookOpen className="w-4 h-4 text-stone-500" />
-            راهنمای اصول UX
+            Ø±Ø§Ù‡Ù†Ù…Ø§ÛŒ Ø§ØµÙˆÙ„ UX
           </Link>
           <Link
             to="/about"
@@ -272,7 +272,7 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             <Info className="w-4 h-4 text-stone-500" />
-            درباره مرجع
+            Ø¯Ø±Ø¨Ø§Ø±Ù‡ Ù…Ø±Ø¬Ø¹
           </Link>
 
           {/* Backlink in mobile drawer */}
@@ -283,7 +283,7 @@ export const Header: React.FC<HeaderProps> = ({
             className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-50/60 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 transition-colors border border-emerald-200/60 dark:border-emerald-800/60 mt-2"
           >
             <Globe className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-            <span>توسعه توسط حمیدرضا درهمی</span>
+            <span>ØªÙˆØ³Ø¹Ù‡ ØªÙˆØ³Ø· Ø­Ù…ÛŒØ¯Ø±Ø¶Ø§ Ø¯Ø±Ù‡Ù…ÛŒ</span>
           </a>
         </div>
       )}

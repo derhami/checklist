@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, X, CheckSquare, ArrowLeft, Bookmark } from 'lucide-react';
 import { allChecklists, getTotalItemsCount } from '../data/checklists';
@@ -82,7 +82,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, bookm
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="جستجوی عنوان، کامپوننت، یا موضوع... (مثال: دکمه، لندینگ، WCAG)"
+            placeholder="Ø¬Ø³ØªØ¬ÙˆÛŒ Ø¹Ù†ÙˆØ§Ù†ØŒ Ú©Ø§Ù…Ù¾ÙˆÙ†Ù†ØªØŒ ÛŒØ§ Ù…ÙˆØ¶ÙˆØ¹... (Ù…Ø«Ø§Ù„: Ø¯Ú©Ù…Ù‡ØŒ Ù„Ù†Ø¯ÛŒÙ†Ú¯ØŒ WCAG)"
             className="w-full bg-transparent text-sm text-stone-900 dark:text-stone-100 placeholder-stone-400 focus:outline-none"
           />
           {query && (
@@ -104,18 +104,18 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, bookm
         {/* Search Results List */}
         <div className="p-2 overflow-y-auto space-y-1">
           <div className="px-3 py-1.5 text-[11px] font-semibold text-stone-400 tracking-wider uppercase flex items-center justify-between">
-            <span>{query.trim() ? 'نتایج جستجو' : 'چک‌لیست‌های ویژه و پیشنهادی'}</span>
-            <span className="font-mono text-stone-500">{toPersianDigits(results.length)} مورد</span>
+            <span>{query.trim() ? 'Ù†ØªØ§ÛŒØ¬ Ø¬Ø³ØªØ¬Ùˆ' : 'Ú†Ú©â€ŒÙ„ÛŒØ³Øªâ€ŒÙ‡Ø§ÛŒ ÙˆÛŒÚ˜Ù‡ Ùˆ Ù¾ÛŒØ´Ù†Ù‡Ø§Ø¯ÛŒ'}</span>
+            <span className="font-mono text-stone-500">{toPersianDigits(results.length)} Ù…ÙˆØ±Ø¯</span>
           </div>
 
           {results.length === 0 ? (
             <div className="p-8 text-center text-stone-500 space-y-2">
               <CheckSquare className="w-8 h-8 mx-auto text-stone-300 dark:text-stone-700" />
               <p className="text-sm font-medium text-stone-700 dark:text-stone-300">
-                چک‌لیستی با عبارت «{query}» پیدا نشد.
+                Ú†Ú©â€ŒÙ„ÛŒØ³ØªÛŒ Ø¨Ø§ Ø¹Ø¨Ø§Ø±Øª Â«{query}Â» Ù¾ÛŒØ¯Ø§ Ù†Ø´Ø¯.
               </p>
               <p className="text-xs text-stone-400">
-                عبارت دیگری مانند «فرم»، «پرداخت»، «دارک مد» یا «دکمه» را امتحان کنید.
+                Ø¹Ø¨Ø§Ø±Øª Ø¯ÛŒÚ¯Ø±ÛŒ Ù…Ø§Ù†Ù†Ø¯ Â«ÙØ±Ù…Â»ØŒ Â«Ù¾Ø±Ø¯Ø§Ø®ØªÂ»ØŒ Â«Ø¯Ø§Ø±Ú© Ù…Ø¯Â» ÛŒØ§ Â«Ø¯Ú©Ù…Ù‡Â» Ø±Ø§ Ø§Ù…ØªØ­Ø§Ù† Ú©Ù†ÛŒØ¯.
               </p>
             </div>
           ) : (
@@ -135,7 +135,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, bookm
                     </div>
                     <div className="min-w-0">
                       <div className="flex items-center gap-2">
-                        <span className="font-bold text-sm text-stone-900 dark:text-stone-100 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                        <span className="font-bold text-sm text-stone-900 dark:text-stone-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
                           {c.title}
                         </span>
                         {c.titleEn && (
@@ -144,7 +144,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, bookm
                           </span>
                         )}
                         {isBookmarked && (
-                          <Bookmark className="w-3.5 h-3.5 text-amber-500 fill-amber-500 shrink-0" />
+                          <Bookmark className="w-3.5 h-3.5 text-brand-500 fill-brand-500 shrink-0" />
                         )}
                       </div>
                       <p className="text-xs text-stone-500 dark:text-stone-400 truncate mt-0.5">
@@ -155,7 +155,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, bookm
 
                   <div className="flex items-center gap-2 text-xs text-stone-400 shrink-0">
                     <span className="hidden sm:inline font-mono">
-                      {toPersianDigits(getTotalItemsCount(c))} آیتم
+                      {toPersianDigits(getTotalItemsCount(c))} Ø¢ÛŒØªÙ…
                     </span>
                     <ArrowLeft className="w-4 h-4 text-stone-300 dark:text-stone-600 group-hover:text-stone-900 dark:group-hover:text-stone-100 group-hover:-translate-x-1 transition-all" />
                   </div>
@@ -167,8 +167,8 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, bookm
 
         {/* Footer info */}
         <div className="p-3 bg-stone-50 dark:bg-stone-950 border-t border-stone-200 dark:border-stone-800 text-xs text-stone-500 flex items-center justify-between">
-          <span>راهنما: از کلیدهای ⌘K برای بازکردن جستجو استفاده کنید.</span>
-          <span>مجموع ۶۹ چک‌لیست آنلاین</span>
+          <span>Ø±Ø§Ù‡Ù†Ù…Ø§: Ø§Ø² Ú©Ù„ÛŒØ¯Ù‡Ø§ÛŒ âŒ˜K Ø¨Ø±Ø§ÛŒ Ø¨Ø§Ø²Ú©Ø±Ø¯Ù† Ø¬Ø³ØªØ¬Ùˆ Ø§Ø³ØªÙØ§Ø¯Ù‡ Ú©Ù†ÛŒØ¯.</span>
+          <span>Ù…Ø¬Ù…ÙˆØ¹ Û¶Û¹ Ú†Ú©â€ŒÙ„ÛŒØ³Øª Ø¢Ù†Ù„Ø§ÛŒÙ†</span>
         </div>
       </div>
     </div>

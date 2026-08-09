@@ -46,8 +46,6 @@ export interface FilterState {
   onlyBookmarked?: boolean;
 }
 
-export type AccentTheme = 'amber' | 'blue' | 'emerald' | 'violet' | 'rose' | 'stone';
-
 export interface CustomItem {
   id: string;
   text: string;

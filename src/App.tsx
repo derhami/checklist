@@ -26,8 +26,6 @@ const BookmarksDrawer = lazy(() => import('./components/BookmarksDrawer').then(m
 const ProjectManagerModal = lazy(() => import('./components/ProjectManagerModal').then(module => ({ default: module.ProjectManagerModal })));
 const ShareSnapshotModal = lazy(() => import('./components/ShareSnapshotModal').then(module => ({ default: module.ShareSnapshotModal })));
 const AuditReportModal = lazy(() => import('./components/AuditReportModal').then(module => ({ default: module.AuditReportModal })));
-const ThemeSelectorModal = lazy(() => import('./components/ThemeSelectorModal').then(module => ({ default: module.ThemeSelectorModal })));
-
 function ScrollToTopHelper() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -71,7 +69,6 @@ export default function App() {
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
   const [isShareModalOpen, setIsShareModalOpen] = useState(false);
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
-  const [isThemeModalOpen, setIsThemeModalOpen] = useState(false);
 
   // Compute Radar scores for the report modal
   const radarScores: RadarDimensionScore[] = categories.map((cat) => {
@@ -110,7 +107,7 @@ export default function App() {
     <ThemeProvider>
       <Router>
         <ScrollToTopHelper />
-        <div className="min-h-screen bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100 flex flex-col justify-between font-['Vazirmatn',sans-serif] selection:bg-amber-200 selection:text-stone-900 transition-colors">
+        <div className="min-h-screen bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100 flex flex-col justify-between font-['Vazirmatn',sans-serif] selection:bg-brand-200 selection:text-stone-900 transition-colors">
           {/* Header Navigation */}
           <Header
             isDark={isDark}
@@ -145,7 +142,6 @@ export default function App() {
                       onOpenProjectModal={() => setIsProjectModalOpen(true)}
                       onOpenShareModal={() => setIsShareModalOpen(true)}
                       onOpenReportModal={() => setIsReportModalOpen(true)}
-                      onOpenThemeModal={() => setIsThemeModalOpen(true)}
                       getCheckedCount={getCheckedCount}
                     />
                   }
@@ -262,15 +258,6 @@ export default function App() {
                 activeProject={activeProject}
                 radarScores={radarScores}
                 overallPercentage={overallPercentage}
-              />
-            </Suspense>
-          )}
-
-          {isThemeModalOpen && (
-            <Suspense fallback={null}>
-              <ThemeSelectorModal
-                isOpen={isThemeModalOpen}
-                onClose={() => setIsThemeModalOpen(false)}
               />
             </Suspense>
           )}

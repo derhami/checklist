@@ -11,7 +11,7 @@ interface RadarChartProps {
 export const RadarChart: React.FC<RadarChartProps> = ({
   scores,
   size = 320,
-  accentColor = '#f59e0b',
+  accentColor = '#1d2ea0',
 }) => {
   if (!scores || scores.length === 0) return null;
 

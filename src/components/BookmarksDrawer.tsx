@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+﻿import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { X, Bookmark, Trash2, ArrowLeft, CheckCircle2, Download, Upload } from 'lucide-react';
 import { allChecklists, getTotalItemsCount, getChecklistBySlug } from '../data/checklists';
@@ -55,9 +55,9 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
       if (content) {
         const success = onImport(content);
         if (success) {
-          alert('اطلاعات پیشرفت با موفقیت بازگردانی شد.');
+          alert('Ø§Ø·Ù„Ø§Ø¹Ø§Øª Ù¾ÛŒØ´Ø±ÙØª Ø¨Ø§ Ù…ÙˆÙÙ‚ÛŒØª Ø¨Ø§Ø²Ú¯Ø±Ø¯Ø§Ù†ÛŒ Ø´Ø¯.');
         } else {
-          alert('خطا در فرمت فایل پشتیبان.');
+          alert('Ø®Ø·Ø§ Ø¯Ø± ÙØ±Ù…Øª ÙØ§ÛŒÙ„ Ù¾Ø´ØªÛŒØ¨Ø§Ù†.');
         }
       }
     };
@@ -81,15 +81,15 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
         {/* Drawer Header */}
         <div className="p-4 border-b border-stone-200 dark:border-stone-800 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center">
-              <Bookmark className="w-4 h-4 fill-amber-500 text-amber-500" />
+            <div className="w-8 h-8 rounded-lg bg-brand-100 dark:bg-brand-950/60 text-brand-600 dark:text-brand-400 flex items-center justify-center">
+              <Bookmark className="w-4 h-4 fill-brand-500 text-brand-500" />
             </div>
             <div>
               <h3 className="font-bold text-sm text-stone-900 dark:text-stone-100">
-                چک‌لیست‌های نشانک‌شده
+                Ú†Ú©â€ŒÙ„ÛŒØ³Øªâ€ŒÙ‡Ø§ÛŒ Ù†Ø´Ø§Ù†Ú©â€ŒØ´Ø¯Ù‡
               </h3>
               <p className="text-[11px] text-stone-500 dark:text-stone-400">
-                {toPersianDigits(bookmarks.length)} مورد ذخیره‌شده در مرورگر شما
+                {toPersianDigits(bookmarks.length)} Ù…ÙˆØ±Ø¯ Ø°Ø®ÛŒØ±Ù‡â€ŒØ´Ø¯Ù‡ Ø¯Ø± Ù…Ø±ÙˆØ±Ú¯Ø± Ø´Ù…Ø§
               </p>
             </div>
           </div>
@@ -107,10 +107,10 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
             <div className="py-12 text-center text-stone-500 space-y-3">
               <Bookmark className="w-10 h-10 mx-auto text-stone-300 dark:text-stone-700" />
               <p className="text-sm font-semibold text-stone-700 dark:text-stone-300">
-                هیچ چک‌لیستی نشانک نشده است.
+                Ù‡ÛŒÚ† Ú†Ú©â€ŒÙ„ÛŒØ³ØªÛŒ Ù†Ø´Ø§Ù†Ú© Ù†Ø´Ø¯Ù‡ Ø§Ø³Øª.
               </p>
               <p className="text-xs text-stone-400 max-w-xs mx-auto">
-                هنگام مرور کارت‌های چک‌لیست، روی آیکون نشانک کلیک کنید تا برای دسترسی سریع‌تر در اینجا ذخیره شوند.
+                Ù‡Ù†Ú¯Ø§Ù… Ù…Ø±ÙˆØ± Ú©Ø§Ø±Øªâ€ŒÙ‡Ø§ÛŒ Ú†Ú©â€ŒÙ„ÛŒØ³ØªØŒ Ø±ÙˆÛŒ Ø¢ÛŒÚ©ÙˆÙ† Ù†Ø´Ø§Ù†Ú© Ú©Ù„ÛŒÚ© Ú©Ù†ÛŒØ¯ ØªØ§ Ø¨Ø±Ø§ÛŒ Ø¯Ø³ØªØ±Ø³ÛŒ Ø³Ø±ÛŒØ¹â€ŒØªØ± Ø¯Ø± Ø§ÛŒÙ†Ø¬Ø§ Ø°Ø®ÛŒØ±Ù‡ Ø´ÙˆÙ†Ø¯.
               </p>
             </div>
           ) : (
@@ -128,14 +128,14 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
                     <Link
                       to={`/checklist/${c.slug}`}
                       onClick={onClose}
-                      className="font-bold text-sm text-stone-900 dark:text-stone-100 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+                      className="font-bold text-sm text-stone-900 dark:text-stone-100 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
                     >
                       {c.title}
                     </Link>
                     <button
                       onClick={() => onToggleBookmark(c.slug)}
                       className="text-stone-400 hover:text-rose-500 p-1 rounded hover:bg-stone-200 dark:hover:bg-stone-700"
-                      title="حذف از نشانک‌ها"
+                      title="Ø­Ø°Ù Ø§Ø² Ù†Ø´Ø§Ù†Ú©â€ŒÙ‡Ø§"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
                     </button>
@@ -147,10 +147,10 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
                     <span className="text-[11px] text-stone-500">
                       {checked === total ? (
                         <span className="text-emerald-600 font-semibold flex items-center gap-1">
-                          <CheckCircle2 className="w-3 h-3" /> تکمیلی کامل
+                          <CheckCircle2 className="w-3 h-3" /> ØªÚ©Ù…ÛŒÙ„ÛŒ Ú©Ø§Ù…Ù„
                         </span>
                       ) : (
-                        `${toPersianDigits(checked)} از ${toPersianDigits(total)} انحام‌شده`
+                        `${toPersianDigits(checked)} Ø§Ø² ${toPersianDigits(total)} Ø§Ù†Ø­Ø§Ù…â€ŒØ´Ø¯Ù‡`
                       )}
                     </span>
                     <Link
@@ -158,7 +158,7 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
                       onClick={onClose}
                       className="font-medium text-stone-900 dark:text-stone-100 hover:underline flex items-center gap-1"
                     >
-                      <span>ادامه</span>
+                      <span>Ø§Ø¯Ø§Ù…Ù‡</span>
                       <ArrowLeft className="w-3 h-3" />
                     </Link>
                   </div>
@@ -175,10 +175,10 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
               <button
                 onClick={handleDownloadBackup}
                 className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-700 dark:text-stone-300 font-medium hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors"
-                title="دانلود پشتیبان از پیشرفت‌های ذخیره‌شده"
+                title="Ø¯Ø§Ù†Ù„ÙˆØ¯ Ù¾Ø´ØªÛŒØ¨Ø§Ù† Ø§Ø² Ù¾ÛŒØ´Ø±ÙØªâ€ŒÙ‡Ø§ÛŒ Ø°Ø®ÛŒØ±Ù‡â€ŒØ´Ø¯Ù‡"
               >
                 <Download className="w-3.5 h-3.5" />
-                <span>خروجی پشتیبان (JSON)</span>
+                <span>Ø®Ø±ÙˆØ¬ÛŒ Ù¾Ø´ØªÛŒØ¨Ø§Ù† (JSON)</span>
               </button>
             )}
 
@@ -186,10 +186,10 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
               <button
                 onClick={() => fileInputRef.current?.click()}
                 className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-700 dark:text-stone-300 font-medium hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors"
-                title="بارگذاری فایل پشتیبان"
+                title="Ø¨Ø§Ø±Ú¯Ø°Ø§Ø±ÛŒ ÙØ§ÛŒÙ„ Ù¾Ø´ØªÛŒØ¨Ø§Ù†"
               >
                 <Upload className="w-3.5 h-3.5" />
-                <span>ورودی پشتیبان</span>
+                <span>ÙˆØ±ÙˆØ¯ÛŒ Ù¾Ø´ØªÛŒØ¨Ø§Ù†</span>
               </button>
             )}
           </div>
@@ -198,20 +198,20 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
             {savedChecklists.length > 0 && (
               <button
                 onClick={() => {
-                  if (window.confirm('آیا مطمئن هستید که می‌خواهید تمام پیشرفت‌های ذخیره‌شده را ریست کنید؟')) {
+                  if (window.confirm('Ø¢ÛŒØ§ Ù…Ø·Ù…Ø¦Ù† Ù‡Ø³ØªÛŒØ¯ Ú©Ù‡ Ù…ÛŒâ€ŒØ®ÙˆØ§Ù‡ÛŒØ¯ ØªÙ…Ø§Ù… Ù¾ÛŒØ´Ø±ÙØªâ€ŒÙ‡Ø§ÛŒ Ø°Ø®ÛŒØ±Ù‡â€ŒØ´Ø¯Ù‡ Ø±Ø§ Ø±ÛŒØ³Øª Ú©Ù†ÛŒØ¯ØŸ')) {
                     onResetAll();
                   }
                 }}
                 className="text-xs text-rose-600 dark:text-rose-400 hover:underline font-medium"
               >
-                ریست کلی تمام درصدها
+                Ø±ÛŒØ³Øª Ú©Ù„ÛŒ ØªÙ…Ø§Ù… Ø¯Ø±ØµØ¯Ù‡Ø§
               </button>
             )}
             <button
               onClick={onClose}
               className="mr-auto px-4 py-1.5 text-xs font-semibold bg-stone-900 dark:bg-stone-100 text-stone-100 dark:text-stone-900 rounded-lg"
             >
-              بستن
+              Ø¨Ø³ØªÙ†
             </button>
           </div>
         </div>
