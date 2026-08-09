@@ -1,11 +1,13 @@
-const CACHE_NAME = 'ux-checklist-v1';
+const CACHE_NAME = 'ux-checklist-v2';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/site.webmanifest',
   '/favicon.svg',
   '/logo.svg',
-  '/robots.txt'
+  '/robots.txt',
+  '/fonts/IRANYekanXVF.woff2',
+  '/fonts/IRANYekanXVF.ttf'
 ];
 
 // Install Event: Pre-cache static shell

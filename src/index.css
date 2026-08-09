@@ -1,15 +1,26 @@
 @import "tailwindcss";
 
-/* IRANYekanX VF - Variable Font */
+/* ══ IRANYekanX VF — تنها فونت مجاز پروژه ══
+   فال‌بک: فقط Tahoma (طبق دستور کاربر) */
 @font-face {
   font-family: 'IRANYekanX';
-  src: url('/fonts/IRANYekanXVF.woff2') format('woff2-variations');
+  src:
+    url('/fonts/IRANYekanXVF.woff2') format('woff2-variations'),
+    url('/fonts/IRANYekanXVF.ttf') format('truetype-variations');
   font-weight: 100 900;
   font-display: swap;
   font-style: normal;
 }
 
 @variant dark (&:where(.dark, .dark *));
+
+/* ══ سرقت تمام تخصیص‌های فونت Tailwind ══
+   جلوگیری از جایگزینی فونت سیستمی در کلاس‌های font-sans / font-mono */
+@theme {
+  --font-sans: 'IRANYekanX', 'Tahoma', sans-serif;
+  --font-serif: 'IRANYekanX', 'Tahoma', serif;
+  --font-mono: 'IRANYekanX', 'Tahoma', monospace;
+}
 
 /* Derhami Design System — Brand Tokens
    Primary: #1D2EA0 | Neutral: #2E2F29 | Accent: #C6142A */
@@ -56,7 +67,7 @@
     transition: background-color 0.15s ease, color 0.15s ease;
   }
   body {
-    font-family: 'IRANYekanX', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'IRANYekanX', 'Tahoma', sans-serif;
     background-color: var(--bg-app, #F2F3F8);
     color: var(--text-main, #1A1B1E);
     transition: background-color 0.15s ease, color 0.15s ease;

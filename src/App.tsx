@@ -107,7 +107,7 @@ export default function App() {
     <ThemeProvider>
       <Router>
         <ScrollToTopHelper />
-        <div className="min-h-screen bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100 flex flex-col justify-between font-['Vazirmatn',sans-serif] selection:bg-brand-200 selection:text-stone-900 transition-colors">
+        <div className="min-h-screen bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100 flex flex-col justify-between selection:bg-brand-200 selection:text-stone-900 transition-colors">
           {/* Header Navigation */}
           <Header
             isDark={isDark}
