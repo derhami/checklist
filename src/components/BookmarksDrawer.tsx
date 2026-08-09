@@ -1,4 +1,4 @@
-﻿import React, { useRef } from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { X, Bookmark, Trash2, ArrowLeft, CheckCircle2, Download, Upload } from 'lucide-react';
 import { allChecklists, getTotalItemsCount, getChecklistBySlug } from '../data/checklists';
@@ -55,9 +55,9 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
       if (content) {
         const success = onImport(content);
         if (success) {
-          alert('Ø§Ø·Ù„Ø§Ø¹Ø§Øª Ù¾ÛŒØ´Ø±ÙØª Ø¨Ø§ Ù…ÙˆÙÙ‚ÛŒØª Ø¨Ø§Ø²Ú¯Ø±Ø¯Ø§Ù†ÛŒ Ø´Ø¯.');
+          alert('اطلاعات پیشرفت با موفقیت بازگردانی شد.');
         } else {
-          alert('Ø®Ø·Ø§ Ø¯Ø± ÙØ±Ù…Øª ÙØ§ÛŒÙ„ Ù¾Ø´ØªÛŒØ¨Ø§Ù†.');
+          alert('خطا در فرمت فایل پشتیبان.');
         }
       }
     };
@@ -86,10 +86,10 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
             </div>
             <div>
               <h3 className="font-bold text-sm text-stone-900 dark:text-stone-100">
-                Ú†Ú©â€ŒÙ„ÛŒØ³Øªâ€ŒÙ‡Ø§ÛŒ Ù†Ø´Ø§Ù†Ú©â€ŒØ´Ø¯Ù‡
+                چک‌لیست‌های نشانک‌شده
               </h3>
               <p className="text-[11px] text-stone-500 dark:text-stone-400">
-                {toPersianDigits(bookmarks.length)} Ù…ÙˆØ±Ø¯ Ø°Ø®ÛŒØ±Ù‡â€ŒØ´Ø¯Ù‡ Ø¯Ø± Ù…Ø±ÙˆØ±Ú¯Ø± Ø´Ù…Ø§
+                {toPersianDigits(bookmarks.length)} مورد ذخیره‌شده در مرورگر شما
               </p>
             </div>
           </div>
@@ -107,10 +107,10 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
             <div className="py-12 text-center text-stone-500 space-y-3">
               <Bookmark className="w-10 h-10 mx-auto text-stone-300 dark:text-stone-700" />
               <p className="text-sm font-semibold text-stone-700 dark:text-stone-300">
-                Ù‡ÛŒÚ† Ú†Ú©â€ŒÙ„ÛŒØ³ØªÛŒ Ù†Ø´Ø§Ù†Ú© Ù†Ø´Ø¯Ù‡ Ø§Ø³Øª.
+                هیچ چک‌لیستی نشانک نشده است.
               </p>
               <p className="text-xs text-stone-400 max-w-xs mx-auto">
-                Ù‡Ù†Ú¯Ø§Ù… Ù…Ø±ÙˆØ± Ú©Ø§Ø±Øªâ€ŒÙ‡Ø§ÛŒ Ú†Ú©â€ŒÙ„ÛŒØ³ØªØŒ Ø±ÙˆÛŒ Ø¢ÛŒÚ©ÙˆÙ† Ù†Ø´Ø§Ù†Ú© Ú©Ù„ÛŒÚ© Ú©Ù†ÛŒØ¯ ØªØ§ Ø¨Ø±Ø§ÛŒ Ø¯Ø³ØªØ±Ø³ÛŒ Ø³Ø±ÛŒØ¹â€ŒØªØ± Ø¯Ø± Ø§ÛŒÙ†Ø¬Ø§ Ø°Ø®ÛŒØ±Ù‡ Ø´ÙˆÙ†Ø¯.
+                هنگام مرور کارت‌های چک‌لیست، روی آیکون نشانک کلیک کنید تا برای دسترسی سریع‌تر در اینجا ذخیره شوند.
               </p>
             </div>
           ) : (
@@ -135,7 +135,7 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
                     <button
                       onClick={() => onToggleBookmark(c.slug)}
                       className="text-stone-400 hover:text-rose-500 p-1 rounded hover:bg-stone-200 dark:hover:bg-stone-700"
-                      title="Ø­Ø°Ù Ø§Ø² Ù†Ø´Ø§Ù†Ú©â€ŒÙ‡Ø§"
+                      title="حذف از نشانک‌ها"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
                     </button>
@@ -147,10 +147,10 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
                     <span className="text-[11px] text-stone-500">
                       {checked === total ? (
                         <span className="text-emerald-600 font-semibold flex items-center gap-1">
-                          <CheckCircle2 className="w-3 h-3" /> ØªÚ©Ù…ÛŒÙ„ÛŒ Ú©Ø§Ù…Ù„
+                          <CheckCircle2 className="w-3 h-3" /> تکمیلی کامل
                         </span>
                       ) : (
-                        `${toPersianDigits(checked)} Ø§Ø² ${toPersianDigits(total)} Ø§Ù†Ø­Ø§Ù…â€ŒØ´Ø¯Ù‡`
+                        `${toPersianDigits(checked)} از ${toPersianDigits(total)} انحام‌شده`
                       )}
                     </span>
                     <Link
@@ -158,7 +158,7 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
                       onClick={onClose}
                       className="font-medium text-stone-900 dark:text-stone-100 hover:underline flex items-center gap-1"
                     >
-                      <span>Ø§Ø¯Ø§Ù…Ù‡</span>
+                      <span>ادامه</span>
                       <ArrowLeft className="w-3 h-3" />
                     </Link>
                   </div>
@@ -175,10 +175,10 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
               <button
                 onClick={handleDownloadBackup}
                 className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-700 dark:text-stone-300 font-medium hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors"
-                title="Ø¯Ø§Ù†Ù„ÙˆØ¯ Ù¾Ø´ØªÛŒØ¨Ø§Ù† Ø§Ø² Ù¾ÛŒØ´Ø±ÙØªâ€ŒÙ‡Ø§ÛŒ Ø°Ø®ÛŒØ±Ù‡â€ŒØ´Ø¯Ù‡"
+                title="دانلود پشتیبان از پیشرفت‌های ذخیره‌شده"
               >
                 <Download className="w-3.5 h-3.5" />
-                <span>Ø®Ø±ÙˆØ¬ÛŒ Ù¾Ø´ØªÛŒØ¨Ø§Ù† (JSON)</span>
+                <span>خروجی پشتیبان (JSON)</span>
               </button>
             )}
 
@@ -186,10 +186,10 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
               <button
                 onClick={() => fileInputRef.current?.click()}
                 className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-700 dark:text-stone-300 font-medium hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors"
-                title="Ø¨Ø§Ø±Ú¯Ø°Ø§Ø±ÛŒ ÙØ§ÛŒÙ„ Ù¾Ø´ØªÛŒØ¨Ø§Ù†"
+                title="بارگذاری فایل پشتیبان"
               >
                 <Upload className="w-3.5 h-3.5" />
-                <span>ÙˆØ±ÙˆØ¯ÛŒ Ù¾Ø´ØªÛŒØ¨Ø§Ù†</span>
+                <span>ورودی پشتیبان</span>
               </button>
             )}
           </div>
@@ -198,20 +198,20 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
             {savedChecklists.length > 0 && (
               <button
                 onClick={() => {
-                  if (window.confirm('Ø¢ÛŒØ§ Ù…Ø·Ù…Ø¦Ù† Ù‡Ø³ØªÛŒØ¯ Ú©Ù‡ Ù…ÛŒâ€ŒØ®ÙˆØ§Ù‡ÛŒØ¯ ØªÙ…Ø§Ù… Ù¾ÛŒØ´Ø±ÙØªâ€ŒÙ‡Ø§ÛŒ Ø°Ø®ÛŒØ±Ù‡â€ŒØ´Ø¯Ù‡ Ø±Ø§ Ø±ÛŒØ³Øª Ú©Ù†ÛŒØ¯ØŸ')) {
+                  if (window.confirm('آیا مطمئن هستید که می‌خواهید تمام پیشرفت‌های ذخیره‌شده را ریست کنید؟')) {
                     onResetAll();
                   }
                 }}
                 className="text-xs text-rose-600 dark:text-rose-400 hover:underline font-medium"
               >
-                Ø±ÛŒØ³Øª Ú©Ù„ÛŒ ØªÙ…Ø§Ù… Ø¯Ø±ØµØ¯Ù‡Ø§
+                ریست کلی تمام درصدها
               </button>
             )}
             <button
               onClick={onClose}
               className="mr-auto px-4 py-1.5 text-xs font-semibold bg-stone-900 dark:bg-stone-100 text-stone-100 dark:text-stone-900 rounded-lg"
             >
-              Ø¨Ø³ØªÙ†
+              بستن
             </button>
           </div>
         </div>

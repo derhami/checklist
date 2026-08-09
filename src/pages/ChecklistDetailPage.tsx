@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import {
   Bookmark,
@@ -88,13 +88,13 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
     return (
       <div className="py-20 text-center space-y-4">
         <h2 className="text-xl font-bold text-stone-900 dark:text-stone-100">
-          Ú†Ú©â€ŒÙ„ÛŒØ³Øª Ù…ÙˆØ±Ø¯Ù†Ø¸Ø± ÛŒØ§ÙØª Ù†Ø´Ø¯.
+          چک‌لیست موردنظر یافت نشد.
         </h2>
         <button
           onClick={() => navigate('/browse')}
           className="px-4 py-2 bg-stone-900 text-white rounded-xl text-xs font-bold"
         >
-          Ø¨Ø§Ø²Ú¯Ø´Øª Ø¨Ù‡ Ú©ØªØ§Ø¨Ø®Ø§Ù†Ù‡ Ú†Ú©â€ŒÙ„ÛŒØ³Øªâ€ŒÙ‡Ø§
+          بازگشت به کتابخانه چک‌لیست‌ها
         </button>
       </div>
     );
@@ -156,8 +156,8 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
   const handleCopySingleItem = (itemText: string, itemId: string, explanation?: string) => {
     if (!navigator.clipboard) return;
     const content = explanation
-      ? `[Ú†Ú©â€ŒÙ„ÛŒØ³Øª ${checklist.title}] ${itemText}\nØ±Ø§Ù‡Ù†Ù…Ø§: ${explanation}`
-      : `[Ú†Ú©â€ŒÙ„ÛŒØ³Øª ${checklist.title}] ${itemText}`;
+      ? `[چک‌لیست ${checklist.title}] ${itemText}\nراهنما: ${explanation}`
+      : `[چک‌لیست ${checklist.title}] ${itemText}`;
     navigator.clipboard.writeText(content);
     setCopiedItemId(itemId);
     setTimeout(() => setCopiedItemId(null), 2000);
@@ -173,23 +173,23 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
 
   const handleCopyMarkdown = () => {
     if (!navigator.clipboard) return;
-    let md = `# Ú†Ú©â€ŒÙ„ÛŒØ³Øª: ${checklist.title}\n\n`;
+    let md = `# چک‌لیست: ${checklist.title}\n\n`;
     md += `${checklist.description}\n\n`;
-    md += `Ù¾ÛŒØ´Ø±ÙØª: ${checkedItemsCount}/${totalItems} (${Math.round((checkedItemsCount / totalItems) * 100)}%)\n\n`;
+    md += `پیشرفت: ${checkedItemsCount}/${totalItems} (${Math.round((checkedItemsCount / totalItems) * 100)}%)\n\n`;
 
     checklist.sections.forEach((sec) => {
       md += `## ${sec.title}\n`;
       sec.items.forEach((item) => {
         const checked = isChecked(checklist.slug, item.id);
         const icon = checked ? '[x]' : '[ ]';
-        const star = item.isEssential ? 'â­ ' : '';
+        const star = item.isEssential ? '⭐ ' : '';
         md += `- ${icon} ${star}${item.text}\n`;
       });
       md += '\n';
     });
 
     if (customItemsForSlug.length > 0) {
-      md += `## Ù…ÙˆØ§Ø±Ø¯ Ø§Ø®ØªØµØ§ØµÛŒ ØªÛŒÙ…\n`;
+      md += `## موارد اختصاصی تیم\n`;
       customItemsForSlug.forEach((c) => {
         const icon = c.checked ? '[x]' : '[ ]';
         md += `- ${icon} ${c.text}\n`;
@@ -212,19 +212,19 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
   return (
     <div className="space-y-8 py-6 sm:py-8 max-w-4xl mx-auto print:py-0 print:max-w-none">
       <SEO
-        title={`Ú†Ú©â€ŒÙ„ÛŒØ³Øª ${checklist.title}`}
-        description={`Ú†Ú©â€ŒÙ„ÛŒØ³Øª ØªØ®ØµØµÛŒ ${checklist.title}: ${checklist.description}`}
+        title={`چک‌لیست ${checklist.title}`}
+        description={`چک‌لیست تخصصی ${checklist.title}: ${checklist.description}`}
         canonicalUrl={window.location.href}
       />
 
       {/* Top Breadcrumb */}
       <nav className="flex items-center gap-2 text-xs text-stone-500 font-medium print:hidden">
         <Link to="/" className="hover:text-stone-900 dark:hover:text-stone-100">
-          Ø®Ø§Ù†Ù‡
+          خانه
         </Link>
         <span>/</span>
         <Link to="/browse" className="hover:text-stone-900 dark:hover:text-stone-100">
-          Ú©ØªØ§Ø¨Ø®Ø§Ù†Ù‡
+          کتابخانه
         </Link>
         <span>/</span>
         {category && (
@@ -279,7 +279,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
               }`}
             >
               <Bookmark className={`w-4 h-4 ${bookmarked ? 'fill-brand-500 text-brand-500' : ''}`} />
-              <span className="hidden sm:inline">{bookmarked ? 'Ù†Ø´Ø§Ù†Ú©â€ŒØ´Ø¯Ù‡' : 'Ù†Ø´Ø§Ù†Ú©â€ŒÚ¯Ø°Ø§Ø±ÛŒ'}</span>
+              <span className="hidden sm:inline">{bookmarked ? 'نشانک‌شده' : 'نشانک‌گذاری'}</span>
             </button>
 
             <button
@@ -292,7 +292,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
                 <Copy className="w-4 h-4" />
               )}
               <span className="hidden sm:inline">
-                {copiedMarkdown ? 'Ù…Ø§Ø±Ú©â€ŒØ¯Ø§ÙˆÙ† Ú©Ù¾ÛŒ Ø´Ø¯!' : 'Ú©Ù¾ÛŒ Markdown'}
+                {copiedMarkdown ? 'مارک‌داون کپی شد!' : 'کپی Markdown'}
               </span>
             </button>
 
@@ -301,7 +301,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
               className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-stone-50 dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:bg-stone-100 transition-colors"
             >
               <Printer className="w-4 h-4" />
-              <span className="hidden sm:inline">Ù¾Ø±ÛŒÙ†Øª / PDF</span>
+              <span className="hidden sm:inline">پرینت / PDF</span>
             </button>
 
             <button
@@ -309,13 +309,13 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
               className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold bg-stone-50 dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:bg-stone-100 transition-colors"
             >
               {copiedLink ? <Check className="w-4 h-4 text-emerald-500" /> : <Share2 className="w-4 h-4" />}
-              <span className="hidden sm:inline">{copiedLink ? 'Ù„ÛŒÙ†Ú© Ú©Ù¾ÛŒ Ø´Ø¯!' : 'Ø§Ø´ØªØ±Ø§Ú©â€ŒÚ¯Ø°Ø§Ø±ÛŒ'}</span>
+              <span className="hidden sm:inline">{copiedLink ? 'لینک کپی شد!' : 'اشتراک‌گذاری'}</span>
             </button>
 
             {checkedItemsCount > 0 && (
               <button
                 onClick={() => {
-                  if (window.confirm('Ø¢ÛŒØ§ Ù…ÛŒâ€ŒØ®ÙˆØ§Ù‡ÛŒØ¯ Ù¾ÛŒØ´Ø±ÙØª Ø§ÛŒÙ† Ú†Ú©â€ŒÙ„ÛŒØ³Øª Ù¾Ø§Ú© Ø´ÙˆØ¯ØŸ')) {
+                  if (window.confirm('آیا می‌خواهید پیشرفت این چک‌لیست پاک شود؟')) {
                     resetChecklist(checklist.slug);
                   }
                 }}
@@ -333,7 +333,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
           {isFullyCompleted && (
             <div className="p-3 bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800 rounded-xl text-xs text-emerald-800 dark:text-emerald-300 font-bold flex items-center gap-2">
               <Sparkles className="w-4 h-4 fill-emerald-500 text-emerald-500" />
-              <span>ØªØ¨Ø±ÛŒÙ€Ú©! ØªÙ…Ø§Ù… Ø§Ø³ØªØ§Ù†Ø¯Ø§Ø±Ø¯Ù‡Ø§ÛŒ Ø§ÛŒÙ† Ú†Ú©â€ŒÙ„ÛŒØ³Øª Ø¨Ø§ Ù…ÙˆÙÙ‚ÛŒØª ØªØ§ÛŒÛŒØ¯ Ùˆ ØªÚ©Ù…ÛŒÙ„ Ø´Ø¯Ù†Ø¯.</span>
+              <span>تبریـک! تمام استانداردهای این چک‌لیست با موفقیت تایید و تکمیل شدند.</span>
             </div>
           )}
         </div>
@@ -351,7 +351,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
                   : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
               }`}
             >
-              Ù‡Ù…Ù‡ ({toPersianDigits(totalItems)})
+              همه ({toPersianDigits(totalItems)})
             </button>
             <button
               onClick={() => setFilterMode('unchecked')}
@@ -361,7 +361,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
                   : 'text-stone-600 dark:text-stone-400 hover:text-stone-900'
               }`}
             >
-              ØªÛŒÚ©â€ŒÙ†Ø®ÙˆØ±Ø¯Ù‡â€ŒÙ‡Ø§ ({toPersianDigits(totalItems - checkedItemsCount)})
+              تیک‌نخورده‌ها ({toPersianDigits(totalItems - checkedItemsCount)})
             </button>
             <button
               onClick={() => setFilterMode('essential')}
@@ -372,7 +372,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
               }`}
             >
               <Star className="w-3 h-3 text-brand-500 fill-brand-500" />
-              <span>Ù†Ú©Ø§Øª Ø­ÛŒØ§ØªÛŒ</span>
+              <span>نکات حیاتی</span>
             </button>
           </div>
 
@@ -383,7 +383,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
                 type="text"
                 value={itemQuery}
                 onChange={(e) => setItemQuery(e.target.value)}
-                placeholder="Ø¬Ø³ØªØ¬Ùˆ Ø¯Ø± Ø§ÛŒÙ† Ú†Ú©â€ŒÙ„ÛŒØ³Øª..."
+                placeholder="جستجو در این چک‌لیست..."
                 className="w-full pr-8 pl-7 py-1.5 text-xs bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-xl text-stone-900 dark:text-stone-100 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-400"
               />
               {itemQuery && (
@@ -401,7 +401,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
               className="px-2.5 py-1.5 bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300 rounded-xl text-xs font-semibold flex items-center gap-1 shrink-0 hover:bg-stone-50"
             >
               {allTipsExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-              <span className="hidden md:inline">{allTipsExpanded ? 'Ø¨Ø³ØªÙ† Ø±Ø§Ù‡Ù†Ù…Ø§Ù‡Ø§' : 'Ù†Ù…Ø§ÛŒØ´ Ø±Ø§Ù‡Ù†Ù…Ø§Ù‡Ø§'}</span>
+              <span className="hidden md:inline">{allTipsExpanded ? 'بستن راهنماها' : 'نمایش راهنماها'}</span>
             </button>
           </div>
         </div>
@@ -437,7 +437,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
                   <h3 className="font-bold text-base text-stone-900 dark:text-stone-100 flex items-center gap-2 flex-wrap">
                     <span>{section.title}</span>
                     <span className="text-xs font-mono text-stone-400 font-normal">
-                      ({toPersianDigits(visibleItems.length)} Ù…ÙˆØ±Ø¯)
+                      ({toPersianDigits(visibleItems.length)} مورد)
                     </span>
                   </h3>
                   {section.description && (
@@ -456,7 +456,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
                       }
                       className="text-stone-500 hover:text-emerald-600 dark:hover:text-emerald-400 font-medium transition-colors"
                     >
-                      ØªØ§ÛŒÛŒØ¯ Ù‡Ù…Ù‡ Ø§ÛŒÙ† Ø¨Ø®Ø´
+                      تایید همه این بخش
                     </button>
                     <span className="text-stone-300 dark:text-stone-700">|</span>
                     <button
@@ -468,7 +468,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
                       }
                       className="text-stone-500 hover:text-rose-600 dark:hover:text-rose-400 font-medium transition-colors"
                     >
-                      Ù¾Ø§Ú©â€ŒÚ©Ø±Ø¯Ù† Ø¨Ø®Ø´
+                      پاک‌کردن بخش
                     </button>
                   </div>
                 )}
@@ -520,7 +520,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
                             {item.isEssential && (
                               <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-semibold bg-brand-100 dark:bg-brand-950/80 text-brand-800 dark:text-brand-300 shrink-0">
                                 <Star className="w-3 h-3 fill-brand-500 text-brand-500" />
-                                Ø§Ù„Ø²Ø§Ù…ÛŒ
+                                الزامی
                               </span>
                             )}
                           </div>
@@ -530,7 +530,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
                             <div className="mt-2 p-2.5 rounded-xl bg-brand-50 dark:bg-brand-950/40 border border-brand-200/80 dark:border-brand-800/60 text-xs text-brand-900 dark:text-brand-200 space-y-1">
                               <p className="font-medium flex items-center gap-1.5">
                                 <MessageSquare className="w-3.5 h-3.5 text-brand-500 shrink-0" />
-                                <span>ÛŒØ§Ø¯Ø¯Ø§Ø´Øª ØªÛŒÙ…: {itemNote.text}</span>
+                                <span>یادداشت تیم: {itemNote.text}</span>
                               </p>
                               {itemNote.figmaUrl && (
                                 <a
@@ -556,7 +556,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
                                 ? 'text-brand-600 dark:text-brand-400 bg-brand-100/60 dark:bg-brand-950/60'
                                 : 'text-stone-400 hover:text-stone-700 dark:hover:text-stone-200'
                             }`}
-                            title="Ø§ÙØ²ÙˆØ¯Ù† ÛŒØ§Ø¯Ø¯Ø§Ø´Øª ÛŒØ§ Ù„ÛŒÙ†Ú© ÙÛŒÚ¯Ù…Ø§"
+                            title="افزودن یادداشت یا لینک فیگما"
                           >
                             <MessageSquare className="w-3.5 h-3.5" />
                           </button>
@@ -592,20 +592,20 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
                         <div className="p-4 border-t border-stone-200 dark:border-stone-800 bg-brand-50/50 dark:bg-brand-950/20 rounded-b-2xl space-y-3">
                           <h4 className="text-xs font-bold text-brand-800 dark:text-brand-300 flex items-center gap-1.5">
                             <MessageSquare className="w-3.5 h-3.5 text-brand-500" />
-                            <span>Ø«Ø¨Øª ÛŒØ§Ø¯Ø¯Ø§Ø´Øª ÛŒØ§ Ù„ÛŒÙ†Ú© ÙÛŒÚ¯Ù…Ø§ Ø¨Ø±Ø§ÛŒ Ø§ÛŒÙ† Ø¢ÛŒØªÙ…:</span>
+                            <span>ثبت یادداشت یا لینک فیگما برای این آیتم:</span>
                           </h4>
                           <textarea
                             rows={2}
                             value={noteText}
                             onChange={(e) => setNoteText(e.target.value)}
-                            placeholder="ÛŒØ§Ø¯Ø¯Ø§Ø´Øª ØªÛŒÙ… (Ù…Ø«Ù„Ø§Ù‹: Ù†ÛŒØ§Ø² Ø¨Ù‡ Ú†Ú© Ù…Ø¬Ø¯Ø¯ Ø¨Ø§ Ø·Ø±Ø§Ø­ Ø§Ø±Ø´Ø¯)..."
+                            placeholder="یادداشت تیم (مثلاً: نیاز به چک مجدد با طراح ارشد)..."
                             className="w-full bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl p-2.5 text-xs text-stone-900 dark:text-stone-100 outline-none focus:ring-2 focus:ring-brand-500/50"
                           />
                           <input
                             type="text"
                             value={figmaUrl}
                             onChange={(e) => setFigmaUrl(e.target.value)}
-                            placeholder="Ù„ÛŒÙ†Ú© ÙØ±ÛŒÙ… ÙÛŒÚ¯Ù…Ø§ ÛŒØ§ ØªÛŒÚ©Øª (https://figma.com/...)"
+                            placeholder="لینک فریم فیگما یا تیکت (https://figma.com/...)"
                             className="w-full bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl px-3 py-1.5 text-xs text-stone-900 dark:text-stone-100 outline-none focus:ring-2 focus:ring-brand-500/50 dir-ltr text-left font-mono"
                           />
                           <div className="flex justify-end gap-2">
@@ -614,14 +614,14 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
                               onClick={() => setActiveNoteItemId(null)}
                               className="px-3 py-1.5 rounded-xl text-xs text-stone-500 hover:bg-stone-200 dark:hover:bg-stone-800 transition-colors"
                             >
-                              Ø§Ù†ØµØ±Ø§Ù
+                              انصراف
                             </button>
                             <button
                               type="button"
                               onClick={() => handleSaveNoteSubmit(item.id)}
                               className="px-4 py-1.5 rounded-xl bg-brand-500 text-stone-950 font-bold text-xs hover:bg-brand-600 transition-colors"
                             >
-                              Ø°Ø®ÛŒØ±Ù‡ ÛŒØ§Ø¯Ø¯Ø§Ø´Øª
+                              ذخیره یادداشت
                             </button>
                           </div>
                         </div>
@@ -632,7 +632,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
                         <div className="px-4 pb-4 pt-2 border-t border-stone-200/50 dark:border-stone-800/50 text-xs text-stone-600 dark:text-stone-300 bg-stone-100/50 dark:bg-stone-900/50 rounded-b-2xl space-y-1">
                           <div className="flex items-center gap-1.5 font-bold text-stone-800 dark:text-stone-200">
                             <Info className="w-3.5 h-3.5 text-brand-500" />
-                            <span>Ø±Ø§Ù‡Ù†Ù…Ø§ÛŒ UX Ùˆ Ø§Ø³ØªØ§Ù†Ø¯Ø§Ø±Ø¯ Ø·Ø±Ø§Ø­ÛŒ:</span>
+                            <span>راهنمای UX و استاندارد طراحی:</span>
                           </div>
                           <p className="leading-relaxed">{item.explanation}</p>
                         </div>
@@ -652,7 +652,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
           <div className="flex items-center gap-2">
             <Plus className="w-5 h-5 text-brand-500" />
             <h3 className="font-bold text-sm text-stone-900 dark:text-stone-100">
-              Ø¢ÛŒØªÙ…â€ŒÙ‡Ø§ÛŒ Ø§Ø®ØªØµØ§ØµÛŒ Ø§Ø¶Ø§ÙÙ‡ Ø´Ø¯Ù‡ ØªÙˆØ³Ø· ØªÛŒÙ… ({toPersianDigits(customItemsForSlug.length)})
+              آیتم‌های اختصاصی اضافه شده توسط تیم ({toPersianDigits(customItemsForSlug.length)})
             </h3>
           </div>
           {!isAddingCustom && (
@@ -661,7 +661,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-stone-950 text-xs font-bold transition-all shadow-sm"
             >
               <Plus className="w-4 h-4" />
-              <span>Ø§ÙØ²ÙˆØ¯Ù† Ú†Ú©â€ŒØ¨Ø§Ú©Ø³ Ø¬Ø¯ÛŒØ¯</span>
+              <span>افزودن چک‌باکس جدید</span>
             </button>
           )}
         </div>
@@ -675,7 +675,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
               autoFocus
               value={customText}
               onChange={(e) => setCustomText(e.target.value)}
-              placeholder="Ø¹Ù†ÙˆØ§Ù† Ø¢ÛŒØªÙ… Ø§Ø®ØªØµØ§ØµÛŒ (Ù…Ø«Ù„Ø§Ù‹: Ú†Ú© Ù…Ø¬Ø¯Ø¯ Ø¨Ø§ Ù„ÛŒØ¯ ÙØ±Ø§Ù†Øªâ€ŒØ§Ù†Ø¯)..."
+              placeholder="عنوان آیتم اختصاصی (مثلاً: چک مجدد با لید فرانت‌اند)..."
               className="w-full bg-stone-50 dark:bg-stone-950 border border-stone-200 dark:border-stone-800 rounded-xl px-3 py-2 text-xs text-stone-900 dark:text-stone-100 outline-none focus:ring-2 focus:ring-brand-500/50"
             />
             <div className="flex justify-end gap-2">
@@ -684,13 +684,13 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
                 onClick={() => setIsAddingCustom(false)}
                 className="px-3 py-1.5 rounded-xl text-xs text-stone-500 hover:bg-stone-100 dark:hover:bg-stone-800"
               >
-                Ø§Ù†ØµØ±Ø§Ù
+                انصراف
               </button>
               <button
                 type="submit"
                 className="px-4 py-1.5 rounded-xl bg-brand-500 text-stone-950 font-bold text-xs hover:bg-brand-600"
               >
-                Ø§ÙØ²ÙˆØ¯Ù† Ø¢ÛŒØªÙ…
+                افزودن آیتم
               </button>
             </div>
           </form>
@@ -729,7 +729,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
                 <button
                   onClick={() => deleteCustomItem(slug, cItem.id)}
                   className="p-1.5 text-stone-400 hover:text-rose-600 rounded-lg shrink-0"
-                  title="Ø­Ø°Ù Ø¢ÛŒØªÙ… Ø§Ø®ØªØµØ§ØµÛŒ"
+                  title="حذف آیتم اختصاصی"
                 >
                   <Trash2 className="w-4 h-4" />
                 </button>
@@ -743,7 +743,7 @@ export const ChecklistDetailPage: React.FC<ChecklistDetailPageProps> = ({
       {relatedChecklists.length > 0 && (
         <div className="space-y-4 pt-8 border-t border-stone-200 dark:border-stone-800 print:hidden">
           <h3 className="font-bold text-lg text-stone-900 dark:text-stone-100">
-            Ú†Ú©â€ŒÙ„ÛŒØ³Øªâ€ŒÙ‡Ø§ÛŒ Ù…Ø±ØªØ¨Ø· Ù¾ÛŒØ´Ù†Ù‡Ø§Ø¯Ø´Ø¯Ù‡
+            چک‌لیست‌های مرتبط پیشنهادشده
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {relatedChecklists.map((rel) => {

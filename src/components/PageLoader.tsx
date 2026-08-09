@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { CheckSquare } from 'lucide-react';
 
 export const PageLoader: React.FC = () => {
@@ -9,7 +9,7 @@ export const PageLoader: React.FC = () => {
       </div>
       <div className="flex items-center gap-2 text-xs font-semibold text-stone-500 dark:text-stone-400">
         <span className="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span>
-        <span>Ø¯Ø± Ø­Ø§Ù„ Ø¨Ø§Ø±Ú¯Ø°Ø§Ø±ÛŒ ØµÙØ­Ù‡...</span>
+        <span>در حال بارگذاری صفحه...</span>
       </div>
     </div>
   );

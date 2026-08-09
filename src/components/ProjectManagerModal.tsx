@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { X, FolderPlus, Trash2, CheckCircle2, Edit3, Briefcase } from 'lucide-react';
 import { Project } from '../types';
 
@@ -68,10 +68,10 @@ export const ProjectManagerModal: React.FC<ProjectManagerModalProps> = ({
             </div>
             <div>
               <h2 className="text-lg font-bold text-stone-900 dark:text-stone-100">
-                Ù…Ø¯ÛŒØ±ÛŒØª Ù¾Ø±ÙˆÚ˜Ù‡â€ŒÙ‡Ø§ (Multi-Project)
+                مدیریت پروژه‌ها (Multi-Project)
               </h2>
               <p className="text-xs text-stone-500 dark:text-stone-400">
-                Ø°Ø®ÛŒØ±Ù‡â€ŒØ³Ø§Ø²ÛŒ ØªÙÚ©ÛŒÚ©â€ŒØ´Ø¯Ù‡ Ù¾ÛŒØ´Ø±ÙØª Ú†Ú©â€ŒÙ„ÛŒØ³Øªâ€ŒÙ‡Ø§ Ø¨Ø±Ø§ÛŒ Ù‡Ø± Ù¾Ø±ÙˆÚ˜Ù‡
+                ذخیره‌سازی تفکیک‌شده پیشرفت چک‌لیست‌ها برای هر پروژه
               </p>
             </div>
           </div>
@@ -87,14 +87,14 @@ export const ProjectManagerModal: React.FC<ProjectManagerModalProps> = ({
         {!isCreating && (
           <div className="flex items-center justify-between shrink-0">
             <span className="text-xs font-bold text-stone-500 dark:text-stone-400">
-              Ù„ÛŒØ³Øª Ù¾Ø±ÙˆÚ˜Ù‡â€ŒÙ‡Ø§ÛŒ ÙØ¹Ø§Ù„ ({projects.length})
+              لیست پروژه‌های فعال ({projects.length})
             </span>
             <button
               onClick={() => setIsCreating(true)}
               className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-brand-500 hover:bg-brand-600 text-stone-950 text-xs font-bold transition-all shadow-sm"
             >
               <FolderPlus className="w-4 h-4" />
-              <span>ØªØ¹Ø±ÛŒÙ Ù¾Ø±ÙˆÚ˜Ù‡ Ø¬Ø¯ÛŒØ¯</span>
+              <span>تعریف پروژه جدید</span>
             </button>
           </div>
         )}
@@ -104,27 +104,27 @@ export const ProjectManagerModal: React.FC<ProjectManagerModalProps> = ({
           <form onSubmit={handleCreateSubmit} className="bg-stone-50 dark:bg-stone-950 p-4 rounded-2xl border border-stone-200 dark:border-stone-800 space-y-3 shrink-0">
             <h3 className="text-xs font-bold text-stone-900 dark:text-stone-100 flex items-center gap-2">
               <FolderPlus className="w-4 h-4 text-brand-500" />
-              <span>Ø§ÛŒØ¬Ø§Ø¯ Ù¾Ø±ÙˆÚ˜Ù‡ Ø§Ø±Ø²ÛŒØ§Ø¨ÛŒ Ø¬Ø¯ÛŒØ¯</span>
+              <span>ایجاد پروژه ارزیابی جدید</span>
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <input
                 type="text"
                 required
-                placeholder="Ù†Ø§Ù… Ù¾Ø±ÙˆÚ˜Ù‡ (Ù…Ø«Ù„Ø§Ù‹: Ø±ÛŒØ¯ÛŒØ²Ø§ÛŒÙ† Ø§Ø³Ù†Ù¾)"
+                placeholder="نام پروژه (مثلاً: ریدیزاین اسنپ)"
                 value={newName}
                 onChange={(e) => setNewName(e.target.value)}
                 className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl px-3 py-2 text-xs text-stone-900 dark:text-stone-100 outline-none focus:ring-2 focus:ring-brand-500/50"
               />
               <input
                 type="text"
-                placeholder="Ù†Ø§Ù… Ú©Ø§Ø±ÙØ±Ù…Ø§ / ØªÛŒÙ… (Ø§Ø®ØªÛŒØ§Ø±ÛŒ)"
+                placeholder="نام کارفرما / تیم (اختیاری)"
                 value={newTeam}
                 onChange={(e) => setNewTeam(e.target.value)}
                 className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-xl px-3 py-2 text-xs text-stone-900 dark:text-stone-100 outline-none focus:ring-2 focus:ring-brand-500/50"
               />
             </div>
             <textarea
-              placeholder="ØªÙˆØ¶ÛŒØ­Ø§Øª Ú©ÙˆØªØ§Ù‡ Ù¾Ø±ÙˆÚ˜Ù‡ (Ø§Ø®ØªÛŒØ§Ø±ÛŒ)"
+              placeholder="توضیحات کوتاه پروژه (اختیاری)"
               rows={2}
               value={newDesc}
               onChange={(e) => setNewDesc(e.target.value)}
@@ -136,13 +136,13 @@ export const ProjectManagerModal: React.FC<ProjectManagerModalProps> = ({
                 onClick={() => setIsCreating(false)}
                 className="px-3 py-1.5 rounded-xl text-xs text-stone-500 hover:bg-stone-200 dark:hover:bg-stone-800 transition-colors"
               >
-                Ø§Ù†ØµØ±Ø§Ù
+                انصراف
               </button>
               <button
                 type="submit"
                 className="px-4 py-1.5 rounded-xl bg-brand-500 text-stone-950 font-bold text-xs hover:bg-brand-600 transition-colors"
               >
-                Ø°Ø®ÛŒØ±Ù‡ Ù¾Ø±ÙˆÚ˜Ù‡
+                ذخیره پروژه
               </button>
             </div>
           </form>
@@ -195,7 +195,7 @@ export const ProjectManagerModal: React.FC<ProjectManagerModalProps> = ({
                         onClick={() => handleSaveEdit(proj.id)}
                         className="px-2.5 py-1 bg-stone-900 dark:bg-stone-100 text-stone-100 dark:text-stone-900 rounded-md text-[10px] font-bold"
                       >
-                        Ø°Ø®ÛŒØ±Ù‡ ØªØºÛŒÛŒØ±Ø§Øª
+                        ذخیره تغییرات
                       </button>
                     </div>
                   ) : (
@@ -209,13 +209,13 @@ export const ProjectManagerModal: React.FC<ProjectManagerModalProps> = ({
                         </span>
                         {isActive && (
                           <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-brand-500 text-stone-950">
-                            ÙØ¹Ø§Ù„
+                            فعال
                           </span>
                         )}
                       </div>
                       <p className="text-xs text-stone-500 dark:text-stone-400">
-                        {proj.clientOrTeam ? `ØªÛŒÙ…/Ú©Ø§Ø±ÙØ±Ù…Ø§: ${proj.clientOrTeam}` : 'Ø¨Ø¯ÙˆÙ† Ù†Ø§Ù… Ú©Ø§Ø±ÙØ±Ù…Ø§'}{' '}
-                        â€¢ Ø§ÛŒØ¬Ø§Ø¯: {new Date(proj.createdAt).toLocaleDateString('fa-IR')}
+                        {proj.clientOrTeam ? `تیم/کارفرما: ${proj.clientOrTeam}` : 'بدون نام کارفرما'}{' '}
+                        • ایجاد: {new Date(proj.createdAt).toLocaleDateString('fa-IR')}
                       </p>
                     </div>
                   )}
@@ -232,12 +232,12 @@ export const ProjectManagerModal: React.FC<ProjectManagerModalProps> = ({
                           : 'bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-stone-300 dark:hover:bg-stone-700'
                       }`}
                     >
-                      {isActive ? 'Ù¾Ø±ÙˆÚ˜Ù‡ ÙØ¹Ø§Ù„' : 'Ø§Ù†ØªØ®Ø§Ø¨ Ù¾Ø±ÙˆÚ˜Ù‡'}
+                      {isActive ? 'پروژه فعال' : 'انتخاب پروژه'}
                     </button>
                     <button
                       onClick={() => handleStartEdit(proj)}
                       className="p-1.5 rounded-lg text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 hover:bg-stone-200 dark:hover:bg-stone-800"
-                      title="ÙˆÛŒØ±Ø§ÛŒØ´ Ù†Ø§Ù… Ù¾Ø±ÙˆÚ˜Ù‡"
+                      title="ویرایش نام پروژه"
                     >
                       <Edit3 className="w-4 h-4" />
                     </button>
@@ -245,7 +245,7 @@ export const ProjectManagerModal: React.FC<ProjectManagerModalProps> = ({
                       <button
                         onClick={() => onDeleteProject(proj.id)}
                         className="p-1.5 rounded-lg text-stone-400 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40"
-                        title="Ø­Ø°Ù Ù¾Ø±ÙˆÚ˜Ù‡"
+                        title="حذف پروژه"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>

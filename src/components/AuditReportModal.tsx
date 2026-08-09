@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { X, Printer, CheckCircle2, Clock, Globe, Award, FileText } from 'lucide-react';
 import { Project, RadarDimensionScore } from '../types';
 import { allChecklists as checklists } from '../data/checklists';
@@ -55,10 +55,10 @@ export const AuditReportModal: React.FC<AuditReportModalProps> = ({
             </div>
             <div>
               <h2 className="text-lg font-bold text-stone-900 dark:text-stone-100">
-                Ú¯Ø²Ø§Ø±Ø´ Ø±Ø³Ù…ÛŒ Ø§Ø±Ø²ÛŒØ§Ø¨ÛŒ UX (Executive Audit Report)
+                گزارش رسمی ارزیابی UX (Executive Audit Report)
               </h2>
               <p className="text-xs text-stone-500 dark:text-stone-400">
-                Ù‚Ø§Ø¨Ù„ Ø§Ø±Ø§Ø¦Ù‡ Ø¨Ù‡ Ù…Ø¯ÛŒØ±Ø§Ù† Ù…Ø­ØµÙˆÙ„ØŒ Ú©Ø§Ø±ÙØ±Ù…Ø§ÛŒØ§Ù† Ùˆ ØªÛŒÙ…â€ŒÙ‡Ø§ÛŒ ÙÙ†ÛŒ
+                قابل ارائه به مدیران محصول، کارفرمایان و تیم‌های فنی
               </p>
             </div>
           </div>
@@ -69,7 +69,7 @@ export const AuditReportModal: React.FC<AuditReportModalProps> = ({
               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-100 dark:text-stone-900 text-xs font-bold hover:bg-stone-800 dark:hover:bg-white transition-colors shadow-sm"
             >
               <Printer className="w-4 h-4" />
-              <span>Ø¯Ø§Ù†Ù„ÙˆØ¯ PDF / Ù¾Ø±ÛŒÙ†Øª</span>
+              <span>دانلود PDF / پرینت</span>
             </button>
             <button
               onClick={onClose}
@@ -89,46 +89,46 @@ export const AuditReportModal: React.FC<AuditReportModalProps> = ({
               <div>
                 <div className="flex items-center gap-2 text-xs font-bold text-brand-600 dark:text-brand-400 uppercase tracking-widest mb-1">
                   <Award className="w-4 h-4" />
-                  <span>Ú¯Ø²Ø§Ø±Ø´ Ø±Ø³Ù…ÛŒ Ø§Ø±Ø²ÛŒØ§Ø¨ÛŒ Ú©ÛŒÙÛŒØª ØªØ¬Ø±Ø¨Ù‡ Ú©Ø§Ø±Ø¨Ø±ÛŒ</span>
+                  <span>گزارش رسمی ارزیابی کیفیت تجربه کاربری</span>
                 </div>
                 <h1 className="text-2xl font-black text-stone-900 dark:text-stone-100 print:text-black">
-                  Ù¾Ø±ÙˆÚ˜Ù‡: {activeProject.name}
+                  پروژه: {activeProject.name}
                 </h1>
                 {activeProject.clientOrTeam && (
                   <p className="text-sm font-semibold text-stone-600 dark:text-stone-400 print:text-stone-700 mt-0.5">
-                    Ú©Ø§Ø±ÙØ±Ù…Ø§ / ØªÛŒÙ…: {activeProject.clientOrTeam}
+                    کارفرما / تیم: {activeProject.clientOrTeam}
                   </p>
                 )}
               </div>
 
               <div className="text-left sm:text-right text-xs text-stone-500 dark:text-stone-400 print:text-stone-600 space-y-1">
-                <p>ØªØ§Ø±ÛŒØ® Ø§Ø±Ø²ÛŒØ§Ø¨ÛŒ: {new Date().toLocaleDateString('fa-IR')}</p>
-                <p className="font-sans">Ù…Ø±Ø¬Ø¹ Ø§Ø±Ø²ÛŒØ§Ø¨ÛŒ: checklist.nounproject.ir</p>
+                <p>تاریخ ارزیابی: {new Date().toLocaleDateString('fa-IR')}</p>
+                <p className="font-sans">مرجع ارزیابی: checklist.nounproject.ir</p>
               </div>
             </div>
 
             {/* Core Health Badge Stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
               <div className="p-3.5 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200/80 dark:border-stone-800 print:border-stone-300">
-                <span className="text-[11px] font-bold text-stone-500">Ù†Ù…Ø±Ù‡ Ø³Ù„Ø§Ù…Øª UX</span>
+                <span className="text-[11px] font-bold text-stone-500">نمره سلامت UX</span>
                 <div className="text-xl font-black text-brand-500 mt-0.5">
-                  Ùª{toPersianDigits(overallPercentage)}
+                  ٪{toPersianDigits(overallPercentage)}
                 </div>
               </div>
               <div className="p-3.5 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200/80 dark:border-stone-800 print:border-stone-300">
-                <span className="text-[11px] font-bold text-stone-500">Ù…ÙˆØ§Ø±Ø¯ Ù¾Ø§Ø³â€ŒØ´Ø¯Ù‡</span>
+                <span className="text-[11px] font-bold text-stone-500">موارد پاس‌شده</span>
                 <div className="text-xl font-black text-emerald-600 dark:text-emerald-400 mt-0.5">
                   {toPersianDigits(checkedItemsCount)}
                 </div>
               </div>
               <div className="p-3.5 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200/80 dark:border-stone-800 print:border-stone-300">
-                <span className="text-[11px] font-bold text-stone-500">Ù…ÙˆØ§Ø±Ø¯ Ù†ÛŒØ§Ø²Ù…Ù†Ø¯ Ø¨Ù‡Ø¨ÙˆØ¯</span>
+                <span className="text-[11px] font-bold text-stone-500">موارد نیازمند بهبود</span>
                 <div className="text-xl font-black text-brand-600 dark:text-brand-400 mt-0.5">
                   {toPersianDigits(totalItemsCount - checkedItemsCount)}
                 </div>
               </div>
               <div className="p-3.5 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200/80 dark:border-stone-800 print:border-stone-300">
-                <span className="text-[11px] font-bold text-stone-500">Ú©Ù„ Ú†Ú©â€ŒÙ„ÛŒØ³Øªâ€ŒÙ‡Ø§</span>
+                <span className="text-[11px] font-bold text-stone-500">کل چک‌لیست‌ها</span>
                 <div className="text-xl font-black text-stone-900 dark:text-stone-100 mt-0.5">
                   {toPersianDigits(totalItemsCount)}
                 </div>
@@ -139,7 +139,7 @@ export const AuditReportModal: React.FC<AuditReportModalProps> = ({
           {/* Category Dimensions Breakdown */}
           <div className="space-y-3">
             <h3 className="text-sm font-bold text-stone-900 dark:text-stone-100 print:text-black">
-              ðŸ“Š ÙˆØ¶Ø¹ÛŒØª Ø³Ù„Ø§Ù…Øª Ø¯Ø± Ø­ÙˆØ²Ù‡â€ŒÙ‡Ø§ÛŒ Ø§ØµÙ„ÛŒ (UX Radar Dimensions)
+              📊 وضعیت سلامت در حوزه‌های اصلی (UX Radar Dimensions)
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {radarScores.map((score) => (
@@ -150,7 +150,7 @@ export const AuditReportModal: React.FC<AuditReportModalProps> = ({
                   <div className="flex justify-between items-center text-xs font-bold">
                     <span>{score.title}</span>
                     <span className="text-brand-600 dark:text-brand-400">
-                      Ùª{toPersianDigits(Math.round(score.percentage))} ({toPersianDigits(score.checkedItems)} Ø§Ø² {toPersianDigits(score.totalItems)})
+                      ٪{toPersianDigits(Math.round(score.percentage))} ({toPersianDigits(score.checkedItems)} از {toPersianDigits(score.totalItems)})
                     </span>
                   </div>
                   <div className="w-full h-2 rounded-full bg-stone-200 dark:bg-stone-800 overflow-hidden">
@@ -167,7 +167,7 @@ export const AuditReportModal: React.FC<AuditReportModalProps> = ({
           {/* Detailed Active Checklist Breakdown */}
           <div className="space-y-6">
             <h3 className="text-sm font-bold text-stone-900 dark:text-stone-100 print:text-black border-b border-stone-200 dark:border-stone-800 pb-2">
-              ðŸ“ Ø¬Ø²Ø¦ÛŒØ§Øª Ø§Ø±Ø²ÛŒØ§Ø¨ÛŒ Ú†Ú©â€ŒÙ„ÛŒØ³Øªâ€ŒÙ‡Ø§ Ùˆ ÛŒØ§Ø¯Ø¯Ø§Ø´Øªâ€ŒÙ‡Ø§ÛŒ ØªÛŒÙ…
+              📝 جزئیات ارزیابی چک‌لیست‌ها و یادداشت‌های تیم
             </h3>
 
             {checklists.map((chk) => {
@@ -189,7 +189,7 @@ export const AuditReportModal: React.FC<AuditReportModalProps> = ({
                       <span>{chk.title}</span>
                     </div>
                     <span className="text-xs font-semibold text-stone-500">
-                      {toPersianDigits(checkedInSlug.length)} Ù…ÙˆØ±Ø¯ ØªÚ©Ù…ÛŒÙ„ Ø´Ø¯Ù‡
+                      {toPersianDigits(checkedInSlug.length)} مورد تکمیل شده
                     </span>
                   </div>
 
@@ -219,7 +219,7 @@ export const AuditReportModal: React.FC<AuditReportModalProps> = ({
                                 </p>
                                 {note && (
                                   <div className="p-2 rounded-lg bg-brand-50 dark:bg-brand-950/40 border border-brand-200/60 dark:border-brand-800/60 text-[11px] text-brand-900 dark:text-brand-200 space-y-0.5">
-                                    <p>ðŸ“ ÛŒØ§Ø¯Ø¯Ø§Ø´Øª ØªÛŒÙ…: {note.text}</p>
+                                    <p>📝 یادداشت تیم: {note.text}</p>
                                     {note.figmaUrl && (
                                       <a
                                         href={note.figmaUrl}
@@ -243,7 +243,7 @@ export const AuditReportModal: React.FC<AuditReportModalProps> = ({
                     {customInSlug.length > 0 && (
                       <div className="space-y-1.5 mt-2">
                         <h4 className="text-[11px] font-bold text-brand-600 dark:text-brand-400">
-                          Ø¢ÛŒØªÙ…â€ŒÙ‡Ø§ÛŒ Ø§Ø®ØªØµØ§ØµÛŒ Ø§Ø¶Ø§ÙÙ‡ Ø´Ø¯Ù‡ ØªÙˆØ³Ø· ØªÛŒÙ…:
+                          آیتم‌های اختصاصی اضافه شده توسط تیم:
                         </h4>
                         {customInSlug.map((c) => (
                           <div

@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Search, Filter, Bookmark, SlidersHorizontal, Grid, X } from 'lucide-react';
 import { SEO } from '../components/SEO';
@@ -72,16 +72,16 @@ export const BrowsePage: React.FC<BrowsePageProps> = ({
   return (
     <div className="space-y-8 py-6 sm:py-8">
       <SEO
-        title="Ú©ØªØ§Ø¨Ø®Ø§Ù†Ù‡ Ø¬Ø§Ù…Ø¹ Ú†Ú©â€ŒÙ„ÛŒØ³Øªâ€ŒÙ‡Ø§ÛŒ Ø·Ø±Ø§Ø­ÛŒ UI/UX"
-        description="Ø¬Ø³ØªØ¬Ùˆ Ùˆ Ù…Ø±ÙˆØ± Ø¨ÛŒØ´ Ø§Ø² Û¶Û¹ Ú†Ú©â€ŒÙ„ÛŒØ³Øª ØªØ®ØµØµÛŒ Ø·Ø±Ø§Ø­ÛŒ ÙˆØ¨Ø³Ø§ÛŒØªØŒ Ú©Ø§Ù…Ù¾ÙˆÙ†Ù†Øªâ€ŒÙ‡Ø§ÛŒ Ø±Ø§Ø¨Ø· Ú©Ø§Ø±Ø¨Ø±ØŒ Ø¬Ø±ÛŒØ§Ù†â€ŒÙ‡Ø§ÛŒ Ù…Ø­ØµÙˆÙ„ØŒ Ø¨Ø±Ù†Ø¯ÛŒÙ†Ú¯ Ùˆ Ù…ÙˆØ¶ÙˆØ¹Ø§Øª ØªØ®ØµØµÛŒ."
+        title="کتابخانه جامع چک‌لیست‌های طراحی UI/UX"
+        description="جستجو و مرور بیش از ۶۹ چک‌لیست تخصصی طراحی وبسایت، کامپوننت‌های رابط کاربر، جریان‌های محصول، برندینگ و موضوعات تخصصی."
       />
       {/* Header Title */}
       <div className="space-y-2">
         <h1 className="text-2xl sm:text-3xl font-black text-stone-900 dark:text-stone-100">
-          Ú©ØªØ§Ø¨Ø®Ø§Ù†Ù‡ Ø¬Ø§Ù…Ø¹ Ú†Ú©â€ŒÙ„ÛŒØ³Øªâ€ŒÙ‡Ø§ÛŒ Ø·Ø±Ø§Ø­ÛŒ
+          کتابخانه جامع چک‌لیست‌های طراحی
         </h1>
         <p className="text-xs sm:text-sm text-stone-600 dark:text-stone-400">
-          Ù…Ø±ÙˆØ±ØŒ Ø¬Ø³ØªØ¬Ùˆ Ùˆ ÙÛŒÙ„ØªØ± Ø¢Ø±Ø´ÛŒÙˆ Ú©Ø§Ù…Ù„ Û¶Û¹ Ú†Ú©â€ŒÙ„ÛŒØ³Øª ØªØ®ØµØµÛŒ UI/UXØŒ Ú©Ø§Ù…Ù¾ÙˆÙ†Ù†Øªâ€ŒÙ‡Ø§ Ùˆ Ø¬Ø±ÛŒØ§Ù†â€ŒÙ‡Ø§ÛŒ Ù…Ø­ØµÙˆÙ„
+          مرور، جستجو و فیلتر آرشیو کامل ۶۹ چک‌لیست تخصصی UI/UX، کامپوننت‌ها و جریان‌های محصول
         </p>
       </div>
 
@@ -95,7 +95,7 @@ export const BrowsePage: React.FC<BrowsePageProps> = ({
               type="text"
               value={filters.searchQuery}
               onChange={(e) => handleSearchChange(e.target.value)}
-              placeholder="Ø¬Ø³ØªØ¬Ùˆ Ø¨Ø± Ø§Ø³Ø§Ø³ Ø¹Ù†ÙˆØ§Ù† ÛŒØ§ Ù†Ú©ØªÙ‡... (Ù…Ø«Ù„Ø§: Ù„Ù†Ø¯ÛŒÙ†Ú¯ØŒ Ø¯Ú©Ù…Ù‡ØŒ ÙÙˆÚ©ÙˆØ³)"
+              placeholder="جستجو بر اساس عنوان یا نکته... (مثلا: لندینگ، دکمه، فوکوس)"
               className="w-full pr-10 pl-8 py-2 text-xs sm:text-sm bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 rounded-xl text-stone-900 dark:text-stone-100 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-stone-400"
             />
             {filters.searchQuery && (
@@ -112,7 +112,7 @@ export const BrowsePage: React.FC<BrowsePageProps> = ({
             {/* Sort Dropdown */}
             <div className="flex items-center gap-1.5 text-xs">
               <SlidersHorizontal className="w-3.5 h-3.5 text-stone-500" />
-              <span className="text-stone-500 hidden sm:inline">Ù…Ø±ØªØ¨â€ŒØ³Ø§Ø²ÛŒ:</span>
+              <span className="text-stone-500 hidden sm:inline">مرتب‌سازی:</span>
               <select
                 value={filters.sortBy}
                 onChange={(e) =>
@@ -120,10 +120,10 @@ export const BrowsePage: React.FC<BrowsePageProps> = ({
                 }
                 className="bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-800 dark:text-stone-200 text-xs font-medium rounded-lg px-2.5 py-1.5 focus:outline-none"
               >
-                <option value="popular">Ù…Ø­Ø¨ÙˆØ¨â€ŒØªØ±ÛŒÙ†â€ŒÙ‡Ø§ Ùˆ Ø¨Ø±Ú¯Ø²ÛŒØ¯Ù‡</option>
-                <option value="itemCount">Ø¨ÛŒØ´ØªØ±ÛŒÙ† ØªØ¹Ø¯Ø§Ø¯ Ù…ÙˆØ§Ø±Ø¯</option>
-                <option value="alphabetical">Ø¨Ø± Ø§Ø³Ø§Ø³ Ø­Ø±ÙˆÙ Ø§Ù„ÙØ¨Ø§</option>
-                <option value="newest">ØªØ±ØªÛŒØ¨ Ø§Ø³ØªØ§Ù†Ø¯Ø§Ø±</option>
+                <option value="popular">محبوب‌ترین‌ها و برگزیده</option>
+                <option value="itemCount">بیشترین تعداد موارد</option>
+                <option value="alphabetical">بر اساس حروف الفبا</option>
+                <option value="newest">ترتیب استاندار</option>
               </select>
             </div>
 
@@ -139,7 +139,7 @@ export const BrowsePage: React.FC<BrowsePageProps> = ({
               }`}
             >
               <Bookmark className={`w-3.5 h-3.5 ${filters.onlyBookmarked ? 'fill-brand-500' : ''}`} />
-              <span>ÙÙ‚Ø· Ù†Ø´Ø§Ù†Ú©â€ŒØ´Ø¯Ù‡â€ŒÙ‡Ø§</span>
+              <span>فقط نشانک‌شده‌ها</span>
             </button>
           </div>
         </div>
@@ -154,7 +154,7 @@ export const BrowsePage: React.FC<BrowsePageProps> = ({
                 : 'bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400 hover:bg-stone-200 dark:hover:bg-stone-700'
             }`}
           >
-            Ù‡Ù…Ù‡ Ù…ÙˆØ§Ø±Ø¯ ({toPersianDigits(allChecklists.length)})
+            همه موارد ({toPersianDigits(allChecklists.length)})
           </button>
 
           {categories.map((cat) => {
@@ -181,7 +181,7 @@ export const BrowsePage: React.FC<BrowsePageProps> = ({
       {/* Results Count Info */}
       <div className="flex items-center justify-between text-xs text-stone-500 font-medium px-1">
         <span>
-          Ù†Ù…Ø§ÛŒØ´ <strong className="text-stone-900 dark:text-stone-100">{toPersianDigits(filtered.length)}</strong> Ú†Ú©â€ŒÙ„ÛŒØ³Øª
+          نمایش <strong className="text-stone-900 dark:text-stone-100">{toPersianDigits(filtered.length)}</strong> چک‌لیست
         </span>
         {(filters.searchQuery || filters.category !== 'all' || filters.onlyBookmarked) && (
           <button
@@ -189,7 +189,7 @@ export const BrowsePage: React.FC<BrowsePageProps> = ({
             className="text-rose-600 dark:text-rose-400 hover:underline flex items-center gap-1"
           >
             <X className="w-3.5 h-3.5" />
-            <span>Ù¾Ø§Ú©â€ŒÚ©Ø±Ø¯Ù† ÙÛŒÙ„ØªØ±Ù‡Ø§</span>
+            <span>پاک‌کردن فیلترها</span>
           </button>
         )}
       </div>
@@ -199,16 +199,16 @@ export const BrowsePage: React.FC<BrowsePageProps> = ({
         <div className="bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 rounded-2xl p-12 text-center space-y-3">
           <Grid className="w-10 h-10 mx-auto text-stone-300 dark:text-stone-700" />
           <h3 className="font-bold text-base text-stone-800 dark:text-stone-200">
-            Ù‡ÛŒÚ† Ú†Ú©â€ŒÙ„ÛŒØ³ØªÛŒ Ù¾ÛŒØ¯Ø§ Ù†Ø´Ø¯.
+            هیچ چک‌لیستی پیدا نشد.
           </h3>
           <p className="text-xs text-stone-500 max-w-sm mx-auto">
-            Ø¹Ø¨Ø§Ø±Øª Ø¬Ø³ØªØ¬Ùˆ Ø´Ø¯Ù‡ ÛŒØ§ ÙÛŒÙ„ØªØ±Ù‡Ø§ÛŒ Ø§Ø¹Ù…Ø§Ù„â€ŒØ´Ø¯Ù‡ Ù…Ù†Ø·Ø¨Ù‚ Ø¨Ø§ Ù‡ÛŒÚ† Ú†Ú©â€ŒÙ„ÛŒØ³ØªÛŒ Ø¯Ø± Ø¢Ø±Ø´ÛŒÙˆ Ù†ÛŒØ³Øª.
+            عبارت جستجو شده یا فیلترهای اعمال‌شده منطبق با هیچ چک‌لیستی در آرشیو نیست.
           </p>
           <button
             onClick={resetFilters}
             className="px-4 py-2 bg-stone-900 dark:bg-stone-100 text-stone-100 dark:text-stone-900 font-bold text-xs rounded-xl"
           >
-            Ù…Ø´Ø§Ù‡Ø¯Ù‡ Ù‡Ù…Ù‡ Ú†Ú©â€ŒÙ„ÛŒØ³Øªâ€ŒÙ‡Ø§
+            مشاهده همه چک‌لیست‌ها
           </button>
         </div>
       ) : (

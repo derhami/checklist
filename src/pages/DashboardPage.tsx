@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Briefcase,
@@ -90,7 +90,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-brand-500/20 text-brand-400 border border-brand-500/30">
               <Briefcase className="w-3.5 h-3.5" />
-              <span>Ù¾Ø±ÙˆÚ˜Ù‡ ÙØ¹Ø§Ù„: {activeProject.name}</span>
+              <span>پروژه فعال: {activeProject.name}</span>
             </span>
             {activeProject.clientOrTeam && (
               <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-stone-800 text-stone-300">
@@ -100,10 +100,10 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
           </div>
 
           <h1 className="text-2xl sm:text-3xl font-black leading-tight">
-            Ø¯Ø§Ø´Ø¨ÙˆØ±Ø¯ Ø³Ù„Ø§Ù…Øª UX Ùˆ Ø§Ø±Ø²ÛŒØ§Ø¨ÛŒ Ú©ÛŒÙÛŒØª
+            داشبورد سلامت UX و ارزیابی کیفیت
           </h1>
           <p className="text-xs sm:text-sm text-stone-400 leading-relaxed">
-            ØªØ­Ù„ÛŒÙ„ Ù‡ÙˆØ´Ù…Ù†Ø¯ Ø´Ø§Ø®Øµâ€ŒÙ‡Ø§ÛŒ ØªØ¬Ø±Ø¨Ù‡ Ú©Ø§Ø±Ø¨Ø±ÛŒØŒ Ù…ÛŒØ²Ø§Ù† Ù¾ÛŒØ´Ø±ÙØª Ù¾Ø±ÙˆÚ˜Ù‡ Ùˆ ØªÙˆÙ„ÛŒØ¯ Ø®Ø±ÙˆØ¬ÛŒâ€ŒÙ‡Ø§ÛŒ Ù…Ø¯ÛŒØ±ÛŒØªÛŒ Ø§Ø³ØªØ§Ù†Ø¯Ø§Ø±Ø¯.
+            تحلیل هوشمند شاخص‌های تجربه کاربری، میزان پیشرفت پروژه و تولید خروجی‌های مدیریتی استاندارد.
           </p>
 
           {/* Quick Actions Bar */}
@@ -113,7 +113,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
               className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-100 text-xs font-bold transition-all border border-stone-700"
             >
               <Briefcase className="w-4 h-4 text-brand-400" />
-              <span>ØªØºÛŒÛŒØ± Ù¾Ø±ÙˆÚ˜Ù‡ ({toPersianDigits(projects.length)})</span>
+              <span>تغییر پروژه ({toPersianDigits(projects.length)})</span>
             </button>
 
             <button
@@ -121,7 +121,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
               className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-brand-500 hover:bg-brand-600 text-stone-950 text-xs font-bold transition-all shadow-md"
             >
               <FileText className="w-4 h-4" />
-              <span>Ø¯Ø§Ù†Ù„ÙˆØ¯ Ú¯Ø²Ø§Ø±Ø´ PDF</span>
+              <span>دانلود گزارش PDF</span>
             </button>
 
             <button
@@ -129,16 +129,16 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
               className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-100 text-xs font-bold transition-all border border-stone-700"
             >
               <Share2 className="w-4 h-4 text-blue-400" />
-              <span>Ù„ÛŒÙ†Ú© Ø²Ù†Ø¯Ù‡ Ø§Ø´ØªØ±Ø§Ú©</span>
+              <span>لینک زنده اشتراک</span>
             </button>
 
             <button
               onClick={handleDownloadReminder}
               className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-100 text-xs font-bold transition-all border border-stone-700"
-              title="Ø¯Ø§Ù†Ù„ÙˆØ¯ ÙØ§ÛŒÙ„ iCal ÛŒØ§Ø¯Ø¢ÙˆØ± Ø§Ø±Ø²ÛŒØ§Ø¨ÛŒ Ø¯ÙˆØ±Ù‡â€ŒØ§ÛŒ Û³ Ù…Ø§Ù‡Ù‡"
+              title="دانلود فایل iCal یادآور ارزیابی دوره‌ای ۳ ماهه"
             >
               <Calendar className="w-4 h-4 text-emerald-400" />
-              <span>{reminderSaved ? 'ØªÙ‚ÙˆÛŒÙ… Ø°Ø®ÛŒØ±Ù‡ Ø´Ø¯!' : 'ÛŒØ§Ø¯Ø¢ÙˆØ± Û³ Ù…Ø§Ù‡Ù‡ (iCal)'}</span>
+              <span>{reminderSaved ? 'تقویم ذخیره شد!' : 'یادآور ۳ ماهه (iCal)'}</span>
             </button>
           </div>
         </div>
@@ -152,17 +152,17 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
           <div className="w-full flex justify-between items-center border-b border-stone-100 dark:border-stone-800 pb-4">
             <div>
               <h2 className="text-base font-bold text-stone-900 dark:text-stone-100">
-                Ù†Ù…ÙˆØ¯Ø§Ø± Ø±Ø§Ø¯Ø§Ø±ÛŒ Ø¨Ù„ÙˆØº UX (Radar Health Score)
+                نمودار راداری بلوغ UX (Radar Health Score)
               </h2>
               <p className="text-xs text-stone-500 dark:text-stone-400">
-                ØªÙˆØ²ÛŒØ¹ ØªØ¹Ø§Ø¯Ù„ Ú©ÛŒÙÛŒØª ØªØ¬Ø±Ø¨Ù‡ Ú©Ø§Ø±Ø¨Ø±ÛŒ Ø¯Ø± Ûµ Ø­ÙˆØ²Ù‡ Ú©Ù„ÛŒØ¯ÛŒ
+                توزیع تعادل کیفیت تجربه کاربری در ۵ حوزه کلیدی
               </p>
             </div>
 
             <div className="text-right">
-              <span className="text-[10px] font-bold text-stone-500 uppercase">Ù†Ù…Ø±Ù‡ Ø³Ù„Ø§Ù…Øª</span>
+              <span className="text-[10px] font-bold text-stone-500 uppercase">نمره سلامت</span>
               <div className="text-2xl font-black text-brand-500">
-                Ùª{toPersianDigits(overallPercentage)}
+                ٪{toPersianDigits(overallPercentage)}
               </div>
             </div>
           </div>
@@ -181,10 +181,10 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
           <div className="p-6 rounded-3xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 space-y-4 shadow-sm">
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold text-stone-500 dark:text-stone-400">
-                Ø®Ù„Ø§ØµÙ‡ ÙˆØ¶Ø¹ÛŒØª Ø¨Ø±Ø±Ø³ÛŒ
+                خلاصه وضعیت بررسی
               </span>
               <span className="text-xs font-black text-brand-500">
-                {toPersianDigits(checkedItemsAll)} Ø§Ø² {toPersianDigits(totalItemsAll)} Ù…ÙˆØ±Ø¯
+                {toPersianDigits(checkedItemsAll)} از {toPersianDigits(totalItemsAll)} مورد
               </span>
             </div>
 
@@ -197,24 +197,24 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
 
             <p className="text-xs text-stone-500 leading-relaxed">
               {overallPercentage >= 80
-                ? 'ðŸŒŸ ÙÙˆÙ‚â€ŒØ§Ù„Ø¹Ø§Ø¯Ù‡! Ù¾Ø±ÙˆÚ˜Ù‡ Ø´Ù…Ø§ Ø§Ø² Ø¯Ø±Ø¬Ù‡ Ø¨Ù„ÙˆØº Ø¨Ø§Ù„Ø§ÛŒ Û¸Û° Ø¯Ø±ØµØ¯ Ø¨Ø±Ø®ÙˆØ±Ø¯Ø§Ø± Ø§Ø³Øª.'
+                ? '🌟 فوق‌العاده! پروژه شما از درجه بلوغ بالای ۸۰ درصد برخوردار است.'
                 : overallPercentage >= 50
-                ? 'ðŸ‘ Ø®ÙˆØ¨! Ø¨ÛŒØ´ Ø§Ø² ÛµÛ° Ø¯Ø±ØµØ¯ Ø§Ø³ØªØ§Ù†Ø¯Ø§Ø±Ø¯Ù‡Ø§ÛŒ Ú©Ù„ÛŒØ¯ÛŒ Ø¨Ø±Ø±Ø³ÛŒ Ø´Ø¯Ù‡â€ŒØ§Ù†Ø¯.'
-                : 'ðŸŽ¯ Ø¯Ø± Ø­Ø§Ù„ Ø§Ø±Ø²ÛŒØ§Ø¨ÛŒ. Ú†Ú©â€ŒÙ„ÛŒØ³Øªâ€ŒÙ‡Ø§ÛŒ Ù…Ø±Ø¨ÙˆØ· Ø¨Ù‡ Ø¯Ø³ØªØ±Ø³ÛŒâ€ŒÙ¾Ø°ÛŒØ±ÛŒ Ùˆ ÙØ±Ù…â€ŒÙ‡Ø§ Ø±Ø§ Ø¨Ø±Ø±Ø³ÛŒ Ú©Ù†ÛŒØ¯.'}
+                ? '👍 خوب! بیش از ۵۰ درصد استانداردهای کلیدی بررسی شده‌اند.'
+                : '🎯 در حال ارزیابی. چک‌لیست‌های مربوط به دسترسی‌پذیری و فرم‌ها را بررسی کنید.'}
             </p>
           </div>
 
           {/* Dimension Mini List */}
           <div className="p-6 rounded-3xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 space-y-3 shadow-sm">
             <h3 className="text-xs font-bold text-stone-900 dark:text-stone-100 mb-2">
-              ØªÚ©Ú©ÛŒÚ© Ûµ Ø­ÙˆØ²Ù‡ Ø§ØµÙ„ÛŒ:
+              تککیک ۵ حوزه اصلی:
             </h3>
             {radarScores.map((score) => (
               <div key={score.categoryId} className="space-y-1">
                 <div className="flex justify-between text-xs font-semibold">
                   <span className="text-stone-700 dark:text-stone-300">{score.title}</span>
                   <span className="text-brand-600 dark:text-brand-400">
-                    Ùª{toPersianDigits(Math.round(score.percentage))}
+                    ٪{toPersianDigits(Math.round(score.percentage))}
                   </span>
                 </div>
                 <div className="w-full h-1.5 rounded-full bg-stone-100 dark:bg-stone-800 overflow-hidden">
@@ -232,7 +232,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
       {/* Categories & Checklist Direct Launch Cards */}
       <div className="space-y-4">
         <h2 className="text-lg font-bold text-stone-900 dark:text-stone-100">
-          Ø¯Ø³ØªØ±Ø³ÛŒ Ø³Ø±ÛŒØ¹ Ø¨Ù‡ Ú†Ú©â€ŒÙ„ÛŒØ³Øªâ€ŒÙ‡Ø§ÛŒ Ù¾Ø±ÙˆÚ˜Ù‡
+          دسترسی سریع به چک‌لیست‌های پروژه
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -254,7 +254,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
                       {cat?.title}
                     </span>
                     <span className="text-xs font-bold text-brand-600 dark:text-brand-400">
-                      Ùª{toPersianDigits(pct)}
+                      ٪{toPersianDigits(pct)}
                     </span>
                   </div>
                   <h3 className="font-bold text-sm text-stone-900 dark:text-stone-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
@@ -273,9 +273,9 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
                     />
                   </div>
                   <div className="flex items-center justify-between text-[11px] text-stone-500">
-                    <span>{toPersianDigits(done)} Ø§Ø² {toPersianDigits(total)} Ù…ÙˆØ±Ø¯</span>
+                    <span>{toPersianDigits(done)} از {toPersianDigits(total)} مورد</span>
                     <span className="flex items-center gap-1 font-bold text-stone-800 dark:text-stone-200 group-hover:translate-x-[-2px] transition-transform">
-                      Ù…Ø´Ø§Ù‡Ø¯Ù‡ Ú†Ú©â€ŒÙ„ÛŒØ³Øª
+                      مشاهده چک‌لیست
                       <ChevronLeft className="w-3.5 h-3.5" />
                     </span>
                   </div>

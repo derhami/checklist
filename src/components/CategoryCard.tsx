@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { Category } from '../types';
@@ -24,7 +24,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
             <DynamicIcon name={category.icon} className="w-5 h-5" />
           </div>
           <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-stone-100 dark:bg-stone-800/80 text-stone-700 dark:text-stone-300 border border-stone-200/60 dark:border-stone-700">
-            {toPersianDigits(checklistsCount)} Ú†Ú©â€ŒÙ„ÛŒØ³Øª
+            {toPersianDigits(checklistsCount)} چک‌لیست
           </span>
         </div>
 
@@ -40,7 +40,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
       </div>
 
       <div className="mt-4 pt-3 border-t border-stone-100 dark:border-stone-800/80 flex items-center justify-between text-xs font-medium text-stone-900 dark:text-stone-200">
-        <span>Ù…Ø´Ø§Ù‡Ø¯Ù‡ Ù…Ø¬Ù…ÙˆØ¹Ù‡</span>
+        <span>مشاهده مجموعه</span>
         <ArrowLeft className="w-4 h-4 text-stone-400 group-hover:text-stone-900 dark:group-hover:text-stone-100 group-hover:-translate-x-1 transition-all" />
       </div>
     </Link>
