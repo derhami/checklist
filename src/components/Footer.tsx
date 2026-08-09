@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CheckSquare, Heart, Shield, Globe } from 'lucide-react';
+import { Heart, Globe } from 'lucide-react';
 import { categories } from '../data/categories';
 
 export const Footer: React.FC = () => {
@@ -39,10 +39,6 @@ export const Footer: React.FC = () => {
             <p className="text-xs leading-relaxed text-stone-500 dark:text-stone-400">
               مرجع حرفه‌ای و جامع چک‌لیست‌های تخصصی طراحی رابط کاربری (UI) و تجربه کاربری (UX) برای طراحان وب، محصول و نرم‌افزار.
             </p>
-            <div className="flex items-center gap-2 text-xs text-stone-500">
-              <Shield className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-              <span>مبتنی بر استانداردهای WCAG 2.1 و Nielsen Norman</span>
-            </div>
           </div>
 
           {/* Col 2: Categories Links */}
