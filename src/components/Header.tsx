@@ -146,16 +146,16 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Action Controls */}
         <div className="flex items-center gap-1 sm:gap-2 shrink-0">
-          {/* Prominent Backlink Badge to derhami.com on Desktop */}
+          {/* Prominent Backlink Badge to nounproject.ir on Desktop */}
           <a
-            href="https://derhami.com"
+            href="https://nounproject.ir"
             target="_blank"
             rel="noopener noreferrer"
-            title="ÙˆØ¨â€ŒØ³Ø§ÛŒØª Ø´Ø®ØµÛŒ Ø­Ù…ÛŒØ¯Ø±Ø¶Ø§ Ø¯Ø±Ù‡Ù…ÛŒ - Ø·Ø±Ø§Ø­ Ù…Ø­ØµÙˆÙ„ Ùˆ ØªÙˆØ³Ø¹Ù‡â€ŒØ¯Ù‡Ù†Ø¯Ù‡"
-            className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-bold text-stone-700 dark:text-stone-200 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/40 transition-colors border border-stone-200/80 dark:border-stone-800 ml-1"
+            title="Noun Project - پلتفرم ابزارهای تیم درهمی"
+            className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-bold text-stone-700 dark:text-stone-200 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-brand-50 dark:hover:bg-brand-950/40 transition-colors border border-stone-200/80 dark:border-stone-800 ml-1"
           >
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
-            <span>derhami.com</span>
+            <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse shrink-0"></span>
+            <span>Noun Project</span>
           </a>
 
           {/* Quick Search Trigger */}
@@ -277,13 +277,13 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Backlink in mobile drawer */}
           <a
-            href="https://derhami.com"
+            href="https://nounproject.ir"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-50/60 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 transition-colors border border-emerald-200/60 dark:border-emerald-800/60 mt-2"
+            className="flex items-center gap-3 px-3.5 py-3 rounded-xl text-xs font-semibold text-brand-700 dark:text-brand-300 bg-brand-50/60 dark:bg-brand-950/40 hover:bg-brand-100 dark:hover:bg-brand-900/60 transition-colors border border-brand-200/60 dark:border-brand-800/60 mt-2"
           >
-            <Globe className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-            <span>ØªÙˆØ³Ø¹Ù‡ ØªÙˆØ³Ø· Ø­Ù…ÛŒØ¯Ø±Ø¶Ø§ Ø¯Ø±Ù‡Ù…ÛŒ</span>
+            <Globe className="w-4 h-4 text-brand-600 dark:text-brand-400" />
+            <span>Noun Project - پلتفرم تیم درهمی</span>
           </a>
         </div>
       )}

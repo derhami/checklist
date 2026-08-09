@@ -268,7 +268,7 @@ export const AuditReportModal: React.FC<AuditReportModalProps> = ({
 
           {/* Footer Branding for Print */}
           <div className="pt-6 border-t border-stone-200 dark:border-stone-800 flex justify-between items-center text-xs text-stone-500 print:text-stone-700">
-            <span>ØªÙˆØ³Ø¹Ù‡ ØªÙˆØ³Ø· Ø­Ù…ÛŒØ¯Ø±Ø¶Ø§ Ø¯Ø±Ù‡Ù…ÛŒ (derhami.com)</span>
+            <span>توسط تیم توسعه حمیدرضا درهمی (Noun Project)</span>
             <span className="flex items-center gap-1 font-sans">
               <Globe className="w-3.5 h-3.5" />
               <span>checklist.nounproject.ir</span>

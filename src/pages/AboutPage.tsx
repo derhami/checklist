@@ -28,14 +28,14 @@ export const AboutPage: React.FC = () => {
         <div className="pt-4 border-t border-stone-100 dark:border-stone-800 flex items-center gap-3 text-xs sm:text-sm text-stone-600 dark:text-stone-400">
           <span>Ø·Ø±Ø§Ø­ÛŒ Ùˆ ØªÙˆØ³Ø¹Ù‡ ÛŒØ§ÙØªÙ‡ ØªÙˆØ³Ø·</span>
           <a
-            href="https://derhami.com"
+            href="https://nounproject.ir"
             target="_blank"
             rel="noopener noreferrer"
-            title="ÙˆØ¨â€ŒØ³Ø§ÛŒØª Ø±Ø³Ù…ÛŒ Ø­Ù…ÛŒØ¯Ø±Ø¶Ø§ Ø¯Ø±Ù‡Ù…ÛŒ"
-            className="inline-flex items-center gap-1.5 font-bold text-stone-900 dark:text-stone-100 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors bg-stone-100 dark:bg-stone-800 px-3 py-1.5 rounded-xl border border-stone-200 dark:border-stone-700"
+            title="Noun Project - پلتفرم ابزارهای تیم درهمی"
+            className="inline-flex items-center gap-1.5 font-bold text-stone-900 dark:text-stone-100 hover:text-brand-600 dark:hover:text-brand-400 transition-colors bg-stone-100 dark:bg-stone-800 px-3 py-1.5 rounded-xl border border-stone-200 dark:border-stone-700"
           >
-            <Globe className="w-3.5 h-3.5 text-emerald-500" />
-            <span>Ø­Ù…ÛŒØ¯Ø±Ø¶Ø§ Ø¯Ø±Ù‡Ù…ÛŒ (derhami.com)</span>
+            <Globe className="w-3.5 h-3.5 text-brand-500" />
+            <span>Noun Project - تیم درهمی</span>
           </a>
         </div>
       </div>
@@ -133,12 +133,12 @@ export const AboutPage: React.FC = () => {
                 Ø­Ù…ÛŒØ¯Ø±Ø¶Ø§ Ø¯Ø±Ù‡Ù…ÛŒ
               </span>
               <a
-                href="https://derhami.com"
+                href="https://nounproject.ir"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-emerald-400 hover:underline"
+                className="text-xs text-brand-400 hover:underline"
               >
-                derhami.com
+                Noun Project
               </a>
             </div>
           </div>

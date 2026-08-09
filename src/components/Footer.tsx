@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CheckSquare, Heart, Shield } from 'lucide-react';
+import { CheckSquare, Heart, Shield, Globe } from 'lucide-react';
 import { categories } from '../data/categories';
 
 export const Footer: React.FC = () => {
@@ -99,14 +99,25 @@ export const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               title="وب‌سایت شخصی حمیدرضا درهمی - طراح محصول و توسعه‌دهنده وب"
-              className="font-bold text-stone-900 dark:text-stone-100 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors no-underline"
+              className="font-bold text-stone-900 dark:text-stone-100 hover:text-brand-600 dark:hover:text-brand-400 transition-colors no-underline"
             >
               حمیدرضا درهمی
             </a>
           </p>
-          <p className="font-sans font-medium text-stone-600 dark:text-stone-400">
-            © 2026 Design Checklist
-          </p>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://nounproject.ir"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-stone-500 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
+            >
+              <Globe className="w-3.5 h-3.5" />
+              <span>Noun Project</span>
+            </a>
+            <span className="font-sans font-medium text-stone-600 dark:text-stone-400">
+              © 2026 Design Checklist
+            </span>
+          </div>
         </div>
       </div>
     </footer>
