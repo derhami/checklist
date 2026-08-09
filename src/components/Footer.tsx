@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Heart, Globe } from 'lucide-react';
-import { categories } from '../data/categories';
+import { Globe } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -47,16 +46,9 @@ export const Footer: React.FC = () => {
               دسته‌بندی‌های اصلی
             </h4>
             <ul className="space-y-2 text-xs">
-              {categories.map((cat) => (
-                <li key={cat.id}>
-                  <Link
-                    to={`/category/${cat.slug}`}
-                    className="hover:text-stone-900 dark:hover:text-stone-100 transition-colors"
-                  >
-                    {cat.title} ({cat.titleEn})
-                  </Link>
-                </li>
-              ))}
+              <li><Link to="/category/ui" className="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">رابط کاربری (UI)</Link></li>
+              <li><Link to="/category/ux" className="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">تجربه کاربری (UX)</Link></li>
+              <li><Link to="/category/accessibility" className="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">دسترسی‌پذیری (A11y)</Link></li>
             </ul>
           </div>
 
@@ -87,14 +79,12 @@ export const Footer: React.FC = () => {
 
         <div className="border-t border-stone-200/80 dark:border-stone-800/80 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
           <p className="flex items-center gap-1.5 flex-wrap justify-center sm:justify-start">
-            <span>توسعه داده شده با</span>
-            <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 inline" />
-            <span>برای جامعه طراحان محصول و وب ایران توسط</span>
+            <span>توسعه داده شده با ♥ برای جامعه طراحان وب ایران توسط</span>
             <a
               href="https://derhami.com"
               target="_blank"
               rel="noopener noreferrer"
-              title="وب‌سایت شخصی حمیدرضا درهمی - طراح محصول و توسعه‌دهنده وب"
+              title="وب‌سایت شخصی حمیدرضا درهمی"
               className="font-bold text-stone-900 dark:text-stone-100 hover:text-brand-600 dark:hover:text-brand-400 transition-colors no-underline"
             >
               حمیدرضا درهمی
@@ -108,7 +98,7 @@ export const Footer: React.FC = () => {
               className="flex items-center gap-1 text-stone-500 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
             >
               <Globe className="w-3.5 h-3.5" />
-              <span>Noun Project</span>
+              <span>لابراتوار پروژه‌های درهمی</span>
             </a>
             <span className="font-sans font-medium text-stone-600 dark:text-stone-400">
               © 2026 Design Checklist
