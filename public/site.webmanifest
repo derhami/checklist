@@ -1,16 +1,28 @@
 {
   "name": "چک‌لیست طراحی UX",
   "short_name": "چک‌لیست UX",
-  "description": "مرجع جامع چک‌لیست‌های تخصصی UI/UX و طراحی محصول به زبان فارسی",
+  "description": "مرجع جامع چک‌لیست‌های تخصصی طراحی UI/UX و دسترسی‌پذیری به زبان فارسی",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0c0a09",
-  "theme_color": "#0c0a09",
+  "background_color": "#18181b",
+  "theme_color": "#18181b",
   "icons": [
     {
       "src": "/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ]
