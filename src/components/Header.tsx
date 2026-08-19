@@ -53,28 +53,11 @@ export const Header: React.FC<HeaderProps> = ({
             className="flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 rounded-xl shrink-0"
             title="چک‌لیست طراحی UX - صفحه اصلی"
           >
-            {/* Crisp Clean Vector Logo without Background Box */}
-            <svg
-              viewBox="0 0 512 512"
-              className="w-8 h-8 sm:w-9 sm:h-9 text-stone-900 dark:text-stone-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors shrink-0"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                d="M 380,215 A 150,150 0 1,1 315,115"
-                stroke="currentColor"
-                strokeWidth="38"
-                strokeLinecap="round"
-              />
-              <path
-                d="M 180,250 L 245,315 L 390,170"
-                stroke="currentColor"
-                strokeWidth="42"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            <img
+              src="/logo.svg"
+              alt="چک‌لیست طراحی UX"
+              className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg shadow-sm group-hover:scale-105 transition-transform shrink-0"
+            />
             
             <div className="flex flex-col min-w-0">
               <span className="font-black text-stone-900 dark:text-stone-100 text-xs sm:text-base leading-tight tracking-tight whitespace-nowrap truncate">
